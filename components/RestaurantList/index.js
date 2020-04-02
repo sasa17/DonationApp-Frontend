@@ -24,7 +24,7 @@ const RestaurantList = () => {
   );
 };
 
-restaurantList.navigationOptions = {
+RestaurantList.navigationOptions = {
   title: "restaurant List",
   headerLeft: <ProfileButton />
 };

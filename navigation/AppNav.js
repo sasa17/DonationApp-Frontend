@@ -13,7 +13,6 @@ const AppNav = createStackNavigator(
     Login: Login,
     Register: Register,
     List: List,
-    Detail: Detail,
     DonationDetail: DonationDetails
   },
   {
