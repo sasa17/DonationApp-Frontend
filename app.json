@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "what-the-shop-2",
-    "slug": "what-the-shop-2",
+    "name": "donation",
+    "slug": "donation",
     "privacy": "public",
     "sdkVersion": "36.0.0",
     "platforms": ["ios", "android", "web"],
