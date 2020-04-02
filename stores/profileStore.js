@@ -7,7 +7,7 @@ class ProfileStore {
 
   fetchProfileData = async () => {
     try {
-      const res = await instance.get("api/profile/");
+      const res = await instance.get("profile/");
       const profile = res.data;
       this.profile = profile;
       this.loading = false;

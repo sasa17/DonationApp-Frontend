@@ -6,7 +6,7 @@ class RestaurantStore {
   loading = true;
   fetchAllRestaurantShops = async () => {
     try {
-      const res = await instance.get("restaurants/");
+      const res = await instance.get("restaurant/");
       const restaurants = res.data;
       this.restaurants = restaurants;
       this.loading = false;

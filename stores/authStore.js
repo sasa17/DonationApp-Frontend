@@ -25,7 +25,7 @@ class AuthStore {
 
   register = async (userData, navigation) => {
     try {
-      await instance.post("api/register/", userData);
+      await instance.post("register/", userData);
       await this.login(userData);
       navigation.navigate("List");
     } catch (err) {
@@ -35,7 +35,7 @@ class AuthStore {
 
   login = async (userData, navigation) => {
     try {
-      const res = await instance.post("api/login/", userData);
+      const res = await instance.post("login/", userData);
       const user = res.data;
       await this.setUser(user.access);
       navigation.navigate("List");

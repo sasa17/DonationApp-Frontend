@@ -25,7 +25,7 @@ const RestaurantList = () => {
 };
 
 RestaurantList.navigationOptions = {
-  title: "restaurant List",
+  title: "Restaurant List",
   headerLeft: <ProfileButton />
 };
 
