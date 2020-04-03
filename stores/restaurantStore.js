@@ -4,12 +4,13 @@ import { instance } from "./instance";
 class RestaurantStore {
   restaurants = [];
   loading = true;
-  fetchAllRestaurantShops = async () => {
+  fetchAllRestaurans = async () => {
     try {
       const res = await instance.get("restaurant/");
       const restaurants = res.data;
       this.restaurants = restaurants;
       this.loading = false;
+      console.log("List", restaurants);
     } catch (err) {
       console.error(err);
     }
@@ -21,6 +22,6 @@ decorate(RestaurantStore, {
 });
 
 const restaurantStore = new RestaurantStore();
-restaurantStore.fetchAllRestaurantShops();
+restaurantStore.fetchAllRestaurants();
 
 export default restaurantStore;

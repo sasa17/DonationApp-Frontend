@@ -14,12 +14,12 @@ import styles from "./styles";
 
 const RestaurantList = () => {
   if (RestaurantStore.loading) return <Spinner />;
-  const RestaurantshopList = RestaurantStore.restaurants.map(restaurant => (
+  const RestaurantsList = RestaurantStore.restaurants.map(restaurant => (
     <RestaurantItem restaurant={restaurant} key={restaurant.id} />
   ));
   return (
     <Content style={styles.authContainer}>
-      <List>{RestaurantshopList}</List>
+      <List>{RestaurantsList}</List>
     </Content>
   );
 };
