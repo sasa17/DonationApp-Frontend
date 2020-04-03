@@ -18,24 +18,18 @@ import {
 // Style
 import styles from "./styles";
 
-// Stores
-import authStore from "../../stores/authStore";
-
-const RestaurantItem = ({ restaurantshop, navigation }) => {
-  const state = {
-    restaurant: restaurantshop.id,
-    quantity: 1
-  };
+const RestaurantItem = ({ restaurant, navigation }) => {
   const handlePress = () =>
     navigation.navigate("Detail", {
-      restaurantshopID: restaurantshop.id,
-      restaurantshopName: restaurantshop.name,
-      restaurantshopPrice: restaurantshop.price
+      restaurantID: restaurant.id,
+      restaurantName: restaurant.name,
+      restaurantLocation: restaurant.location,
+      restaurantDescription: restaurant.description
     });
 
   return (
     <ImageBackground
-      source={{ uri: restaurantshop.image }}
+      source={{ uri: restaurant.image }}
       style={styles.background}
     >
       <View style={styles.overlay} />
@@ -45,12 +39,15 @@ const RestaurantItem = ({ restaurantshop, navigation }) => {
             <Left>
               <Thumbnail
                 bordered
-                source={{ uri: restaurantshop.image }}
+                source={{ uri: restaurant.image }}
                 style={styles.thumbnail}
               />
-              <Text style={styles.text}>{restaurantshop.name}</Text>
+              <Text style={styles.text}>{restaurant.name}</Text>
               <Text note style={styles.text}>
-                KD {restaurantshop.price}
+                Location: {restaurant.location}
+              </Text>
+              <Text note style={styles.text}>
+                Description: {restaurant.description}
               </Text>
             </Left>
             <Right>
