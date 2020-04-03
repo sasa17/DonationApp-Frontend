@@ -10,6 +10,7 @@ import RestaurantStore from "../../stores/restaurantStore";
 // Component
 import RestaurantItem from "./RestaurantItem";
 import ProfileButton from "../Buttons/ProfileButton";
+import LoginButton from "../Buttons/LoginButton";
 import styles from "./styles";
 
 const RestaurantList = () => {
@@ -26,6 +27,7 @@ const RestaurantList = () => {
 
 RestaurantList.navigationOptions = {
   title: "Restaurant List",
+  headerRight: <LoginButton />,
   headerLeft: <ProfileButton />
 };
 

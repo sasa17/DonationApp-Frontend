@@ -4,6 +4,15 @@ import AppContainer from "./navigation";
 
 export default class App extends React.Component {
   render() {
-    return <AppContainer />;
+    return <AppContainer style={styles.container} />;
   }
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: "honeydew",
+    alignItems: "center",
+    justifyContent: "center"
+  }
+});
