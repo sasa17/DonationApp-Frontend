@@ -50,7 +50,7 @@ const RestaurantItem = ({ restaurant, navigation }) => {
                 Description: {restaurant.description}
               </Text>
             </Left>
-            <Right>
+            {/* <Right>
               <Button onPress={handleAdd} style={styles.authButton}>
                 <Icon
                   name="add"
@@ -58,7 +58,7 @@ const RestaurantItem = ({ restaurant, navigation }) => {
                   style={{ color: "white" }}
                 />
               </Button>
-            </Right>
+            </Right> */}
           </CardItem>
         </Card>
       </ListItem>

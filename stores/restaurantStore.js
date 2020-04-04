@@ -4,13 +4,12 @@ import { instance } from "./instance";
 class RestaurantStore {
   restaurants = [];
   loading = true;
-  fetchAllRestaurans = async () => {
+  fetchAllRestaurants = async () => {
     try {
       const res = await instance.get("restaurant/");
       const restaurants = res.data;
       this.restaurants = restaurants;
       this.loading = false;
-      console.log("List", restaurants);
     } catch (err) {
       console.error(err);
     }
