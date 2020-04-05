@@ -5,30 +5,34 @@ import { observer } from "mobx-react";
 import { List, Content, Spinner, Container } from "native-base";
 
 // Stores
-import RestaurantStore from "../../stores/restaurantStore";
+import restaurantStore from "../../stores/restaurantStore";
 
 // Component
 import RestaurantItem from "./RestaurantItem";
 import ProfileButton from "../Buttons/ProfileButton";
-import LoginButton from "../Buttons/LoginButton";
+import LoginButton from "../Buttons/AuthButton";
 import styles from "./styles";
+import DonationItem from "../Donations/Index";
 
 const RestaurantList = () => {
-  if (RestaurantStore.loading) return <Spinner />;
-  const RestaurantsList = RestaurantStore.restaurants.map(restaurant => (
+  if (restaurantStore.loading) return <Spinner />;
+  const RestaurantList = restaurantStore.restaurants.map((restaurant) => (
     <RestaurantItem restaurant={restaurant} key={restaurant.id} />
   ));
   return (
-    <Content style={styles.authContainer}>
-      <List>{RestaurantsList}</List>
-    </Content>
+    <Container style={styles.authContainer}>
+      <DonationItem />
+      <Content>
+        <List>{RestaurantList}</List>
+      </Content>
+    </Container>
   );
 };
 
 RestaurantList.navigationOptions = {
   title: "Restaurant List",
   headerRight: <LoginButton />,
-  headerLeft: <ProfileButton />
+  headerLeft: <ProfileButton />,
 };
 
 export default observer(RestaurantList);

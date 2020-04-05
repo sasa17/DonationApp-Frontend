@@ -12,7 +12,8 @@ import {
   Left,
   Right,
   Button,
-  Icon
+  Icon,
+  List,
 } from "native-base";
 
 // Style
@@ -23,8 +24,6 @@ const RestaurantItem = ({ restaurant, navigation }) => {
     navigation.navigate("Detail", {
       restaurantID: restaurant.id,
       restaurantName: restaurant.name,
-      restaurantLocation: restaurant.location,
-      restaurantDescription: restaurant.description
     });
 
   return (
@@ -42,23 +41,20 @@ const RestaurantItem = ({ restaurant, navigation }) => {
                 source={{ uri: restaurant.image }}
                 style={styles.thumbnail}
               />
-              <Text style={styles.text}>{restaurant.name}</Text>
-              <Text note style={styles.text}>
-                Location: {restaurant.location}
-              </Text>
-              <Text note style={styles.text}>
-                Description: {restaurant.description}
-              </Text>
             </Left>
-            {/* <Right>
-              <Button onPress={handleAdd} style={styles.authButton}>
-                <Icon
-                  name="add"
-                  type="MaterialIcons"
-                  style={{ color: "white" }}
-                />
-              </Button>
-            </Right> */}
+          </CardItem>
+          <CardItem style={styles.transparent}>
+            <Text style={styles.text}>{restaurant.name}</Text>
+          </CardItem>
+          <CardItem style={styles.transparent}>
+            <Text note style={styles.text}>
+              Location: {restaurant.location}
+            </Text>
+          </CardItem>
+          <CardItem style={styles.transparent}>
+            <Text note style={styles.text}>
+              Description: {restaurant.description}
+            </Text>
           </CardItem>
         </Card>
       </ListItem>
