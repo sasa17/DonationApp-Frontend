@@ -6,20 +6,22 @@ import List from "../components/RestaurantList";
 import DonationDetails from "../components/Profile/DonationDetails";
 import Login from "../components/Authentication/Login";
 import Register from "../components/Authentication/Register";
+import Checkout from "../components/Checkout";
 
 const AppNav = createStackNavigator(
   {
-    Profile: Profile,
-    Login: Login,
     Register: Register,
+    Login: Login,
+    Profile: Profile,
     List: List,
-    DonationDetail: DonationDetails
+    DonationDetail: DonationDetails,
+    Checkout: Checkout,
   },
   {
     initialRouteName: "List",
     defaultNavigationOptions: {
-      title: ""
-    }
+      title: "Feed Forward",
+    },
   }
 );
 
