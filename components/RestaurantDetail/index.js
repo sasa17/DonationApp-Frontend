@@ -29,7 +29,7 @@ class RestaurantDetail extends Component {
     return (
       <Content>
         {MenuList}
-        <Text>Total: {MenuStore.total}</Text>
+        <Text style={styles.text}>Total: {MenuStore.total}</Text>
       </Content>
     );
   }
