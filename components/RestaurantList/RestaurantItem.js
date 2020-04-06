@@ -10,10 +10,7 @@ import {
   Thumbnail,
   Text,
   Left,
-  Right,
-  Button,
-  Icon,
-  List,
+  Body,
 } from "native-base";
 
 // Style
@@ -35,26 +32,22 @@ const RestaurantItem = ({ restaurant, navigation }) => {
       <ListItem button onPress={handlePress} style={styles.listitem}>
         <Card style={styles.transparent}>
           <CardItem style={styles.transparent}>
-            <Left>
+            {/* <Left>
               <Thumbnail
                 bordered
                 source={{ uri: restaurant.image }}
                 style={styles.thumbnail}
               />
-            </Left>
-          </CardItem>
-          <CardItem style={styles.transparent}>
-            <Text style={styles.text}>{restaurant.name}</Text>
-          </CardItem>
-          <CardItem style={styles.transparent}>
-            <Text note style={styles.text}>
-              Location: {restaurant.location}
-            </Text>
-          </CardItem>
-          <CardItem style={styles.transparent}>
-            <Text note style={styles.text}>
-              Description: {restaurant.description}
-            </Text>
+            </Left>*/}
+            <Body>
+              <Text style={styles.text}>{restaurant.name}</Text>
+              <Text note numberOfLines={1} style={{ color: "white" }}>
+                Location: {restaurant.location}
+              </Text>
+              <Text note numberOfLines={1} style={{ color: "white" }}>
+                Description: {restaurant.description}
+              </Text>
+            </Body>
           </CardItem>
         </Card>
       </ListItem>
