@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "donation",
-    "slug": "donation",
+    "name": "Feed Forward",
+    "slug": "Feed_Forward",
     "privacy": "public",
     "sdkVersion": "36.0.0",
     "platforms": ["ios", "android", "web"],

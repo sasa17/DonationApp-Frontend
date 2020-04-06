@@ -14,7 +14,7 @@ import authStore from "../../stores/authStore";
 class Login extends Component {
   state = {
     username: "",
-    password: ""
+    password: "",
   };
 
   handlePress = () => {
@@ -35,14 +35,14 @@ class Login extends Component {
           style={styles.authTextInput}
           placeholder="Username"
           placeholderTextColor="darkseagreen"
-          onChangeText={value => this.setState({ username: value })}
+          onChangeText={(value) => this.setState({ username: value })}
         />
         <TextInput
           style={styles.authTextInput}
           placeholder="Password"
           placeholderTextColor="darkseagreen"
           secureTextEntry={true}
-          onChangeText={value => this.setState({ password: value })}
+          onChangeText={(value) => this.setState({ password: value })}
         />
         <TouchableOpacity style={styles.authButton} onPress={this.handlePress}>
           <Text style={styles.authButtonText}>Log in</Text>

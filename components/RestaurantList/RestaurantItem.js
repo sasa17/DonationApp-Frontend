@@ -10,9 +10,7 @@ import {
   Thumbnail,
   Text,
   Left,
-  Right,
-  Button,
-  Icon
+  Body,
 } from "native-base";
 
 // Style
@@ -23,8 +21,6 @@ const RestaurantItem = ({ restaurant, navigation }) => {
     navigation.navigate("Detail", {
       restaurantID: restaurant.id,
       restaurantName: restaurant.name,
-      restaurantLocation: restaurant.location,
-      restaurantDescription: restaurant.description
     });
 
   return (
@@ -36,29 +32,22 @@ const RestaurantItem = ({ restaurant, navigation }) => {
       <ListItem button onPress={handlePress} style={styles.listitem}>
         <Card style={styles.transparent}>
           <CardItem style={styles.transparent}>
-            <Left>
+            {/* <Left>
               <Thumbnail
                 bordered
                 source={{ uri: restaurant.image }}
                 style={styles.thumbnail}
               />
+            </Left>*/}
+            <Body>
               <Text style={styles.text}>{restaurant.name}</Text>
-              <Text note style={styles.text}>
+              <Text note numberOfLines={1} style={{ color: "white" }}>
                 Location: {restaurant.location}
               </Text>
-              <Text note style={styles.text}>
+              <Text note numberOfLines={1} style={{ color: "white" }}>
                 Description: {restaurant.description}
               </Text>
-            </Left>
-            {/* <Right>
-              <Button onPress={handleAdd} style={styles.authButton}>
-                <Icon
-                  name="add"
-                  type="MaterialIcons"
-                  style={{ color: "white" }}
-                />
-              </Button>
-            </Right> */}
+            </Body>
           </CardItem>
         </Card>
       </ListItem>

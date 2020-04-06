@@ -6,9 +6,8 @@ import { Alert } from "react-native";
 
 class AuthStore {
   user = null;
-  loading = true;
 
-  setUser = async token => {
+  setUser = async (token) => {
     if (token) {
       // Save token to localStorage
       await AsyncStorage.setItem("myToken", token);
@@ -44,17 +43,17 @@ class AuthStore {
       Alert.alert("User not found", "Incorrect Username/Password.", [
         {
           text: "Try Again!",
-          onPress: () => navigation.navigate("Login")
+          onPress: () => navigation.navigate("Login"),
         },
         {
           text: "Register",
-          onPress: () => navigation.navigate("Register")
-        }
+          onPress: () => navigation.navigate("Register"),
+        },
       ]);
     }
   };
 
-  logout = async navigation => {
+  logout = async (navigation) => {
     await this.setUser();
     navigation.navigate("List");
   };
@@ -81,7 +80,6 @@ class AuthStore {
 
 decorate(AuthStore, {
   user: observable,
-  loading: observable
 });
 
 const authStore = new AuthStore();
