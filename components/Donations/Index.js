@@ -4,18 +4,22 @@ import { observer } from "mobx-react";
 
 // Styling Components
 import { TextInput, Alert } from "react-native";
-import { Text, Card, CardItem, Left, Right, Button } from "native-base";
+import { Text, Card, CardItem, Left, Right, Button, Body } from "native-base";
 import styles from "./styles";
 import authStore from "../../stores/authStore";
+import { withNavigation } from "react-navigation";
 
 class Donation extends Component {
   state = {
-    amount: null,
+    amount: "",
   };
 
   handlePress = () => {
     if (authStore.user)
-      return donationStore.addDonation(this.state, this.props.navigation);
+      return (
+        donationStore.addDonation(this.state, this.props.navigation),
+        console.log("data", this.state)
+      );
     else
       Alert.alert("User not found", "Please Login or Register to continue", [
         {
@@ -34,16 +38,19 @@ class Donation extends Component {
       <Card>
         <CardItem>
           <Left>
+            <Text style={styles.profiletext}>Amount: KD</Text>
+          </Left>
+          <Body>
             <TextInput
               style={styles.authTextInput}
               placeholder="Donation amount"
               placeholderTextColor="#A6AEC1"
               onChangeText={(value) => this.setState({ amount: value })}
             />
-          </Left>
+          </Body>
           <Right>
             <Button backgroundColor="darkseagreen" onPress={this.handlePress}>
-              <Text color="honeydew" fontWeight="bold">
+              <Text style={{ color: "honeydew", fontWeight: "bold" }}>
                 Donate
               </Text>
             </Button>
@@ -54,4 +61,4 @@ class Donation extends Component {
   }
 }
 
-export default observer(Donation);
+export default withNavigation(observer(Donation));

@@ -21,16 +21,16 @@ import styles from "./styles";
 class Checkout extends Component {
   render() {
     if (donationStore.loading) return <Spinner />;
-    const checkoutList = donationStore.checkout_donations.map(
-      (checkout_donation) => (
-        <CheckoutItem item={checkout_donation} key={checkout_donation.id} />
-      )
-    );
+    // const checkoutList = donationStore.checkout_donations.map(
+    //   (checkout_donation) => (
+    //     <CheckoutItem item={checkout_donation} key={checkout_donation.id} />
+    //   )
+    // );
     return (
       <Container style={styles.authContainer}>
         <Content>
           <Text style={styles.newText}>
-            Total Amount : KD {donationStore.checkout_donations}.000{" "}
+            Total Amount : KD {donationStore.donations}.000{" "}
           </Text>
           <Button
             style={styles.authButton}

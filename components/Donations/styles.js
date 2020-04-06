@@ -6,12 +6,12 @@ const styles = StyleSheet.create({
     alignItems: "center",
     padding: 20,
     backgroundColor: "darkseagreen",
-    marginTop: 30
+    marginTop: 30,
   },
   authButtonText: {
     color: "honeydew",
     fontWeight: "bold",
-    fontSize: 18
+    fontSize: 18,
   },
   authContainer: {
     flex: 1,
@@ -20,37 +20,38 @@ const styles = StyleSheet.create({
     alignItems: "center",
     backgroundColor: "honeydew",
     paddingRight: 60,
-    paddingLeft: 60
+    paddingLeft: 60,
   },
   authOther: {
     color: "darkseagreen",
-    marginTop: 15
+    marginTop: 15,
   },
   authTextInput: {
     alignSelf: "stretch",
-    textAlign: "left",
-    height: 40,
-    marginBottom: 30,
+    textAlign: "center",
+    fontSize: 16,
+    marginTop: 5,
     color: "darkseagreen",
     borderBottomColor: "darkseagreen",
-    borderBottomWidth: 1
+    borderBottomWidth: 1,
   },
   authTitle: {
     color: "darkseagreen",
     fontSize: 24,
     marginBottom: 20,
-    borderBottomColor: "darkseagreen"
+    borderBottomColor: "darkseagreen",
   },
   profileImage: {
     height: 75,
     width: 150,
     flex: 0.5,
-    marginBottom: 10
+    marginBottom: 10,
   },
   profiletext: {
     textAlign: "left",
     color: "darkseagreen",
-    fontSize: 16
+    fontWeight: "bold",
+    fontSize: 18,
   },
   transparent: {
     backgroundColor: "transparent",
@@ -58,8 +59,8 @@ const styles = StyleSheet.create({
     borderRightWidth: 0,
     borderLeftWidth: 0,
     borderBottomWidth: 0,
-    flexDirection: "row"
-  }
+    flexDirection: "row",
+  },
 });
 
 export default styles;
