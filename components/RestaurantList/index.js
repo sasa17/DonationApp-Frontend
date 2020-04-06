@@ -2,7 +2,7 @@ import React from "react";
 import { observer } from "mobx-react";
 
 // NativeBase Components
-import { List, Content, Spinner, Container } from "native-base";
+import { List, Content, Spinner, Container, ProgressBar } from "native-base";
 
 // Stores
 import restaurantStore from "../../stores/restaurantStore";
@@ -13,6 +13,7 @@ import ProfileButton from "../Buttons/ProfileButton";
 import LoginButton from "../Buttons/AuthButton";
 import styles from "./styles";
 import DonationItem from "../Donations/Index";
+import Bar from "../ProgressBar/index";
 
 const RestaurantList = () => {
   if (restaurantStore.loading) return <Spinner />;
@@ -22,6 +23,9 @@ const RestaurantList = () => {
   return (
     <Container style={styles.authContainer}>
       <DonationItem />
+      <>
+        <Bar />
+      </>
       <Content>
         <List>{RestaurantList}</List>
       </Content>

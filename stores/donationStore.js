@@ -5,10 +5,14 @@ class DonationStore {
   donations = [];
 
   addDonation = async (amount, navigation) => {
-    await instance.post("donation/", amount);
-    this.donations.push(amount);
-    console.log("data", donations);
-    navigation.navigate("Checkout");
+    try {
+      await instance.post("donation/", amount);
+      this.donations.push(amount);
+      console.log(this.donations);
+      navigation.navigate("Checkout");
+    } catch (err) {
+      console.log("something's not right");
+    }
   };
 
   checkoutDonation = async () => {
