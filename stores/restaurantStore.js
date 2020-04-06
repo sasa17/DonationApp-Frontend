@@ -4,6 +4,7 @@ import { instance } from "./instance";
 class RestaurantStore {
   restaurants = [];
   loading = true;
+
   fetchAllRestaurants = async () => {
     try {
       const res = await instance.get("restaurant/");
