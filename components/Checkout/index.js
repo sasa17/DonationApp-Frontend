@@ -16,17 +16,21 @@ import {
 import { Alert } from "react-native";
 
 import donationStore from "../../stores/donationStore";
+import profileStore from "../../stores/profileStore";
+import CheckoutItem from "./CheckoutItem";
 import styles from "./styles";
 import { observer } from "mobx-react";
 
 class Checkout extends Component {
   render() {
     if (donationStore.loading) return <Spinner />;
-    const donation = donationStore.donations.map(
-      (checkout_donation) => checkout_donation
-    );
-    const amount = donation.map((amount) => amount);
-    console.log(amount);
+    const checkoutAmount = donationStore.donations.map((checkout_donation) => (
+      <CheckoutItem
+        donation={checkout_donation}
+        key={profileStore.profile.username}
+      />
+    ));
+    console.log("checkout", checkoutAmount);
     const handleCheckout = () => {
       Alert.alert("Thank you for feeding forward!"),
         donationStore.checkoutDonation(this.props.navigation);
@@ -34,9 +38,7 @@ class Checkout extends Component {
     return (
       <Container style={styles.authContainer}>
         <Content>
-          <Text style={styles.newText}>
-            Total Amount : KD {donation.amount}.000{" "}
-          </Text>
+          {checkoutAmount}
           <Button style={styles.authButton} onPress={handleCheckout}>
             <Text style={styles.authButtonText}>Checkout</Text>
           </Button>

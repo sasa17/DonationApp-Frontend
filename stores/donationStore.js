@@ -9,7 +9,6 @@ class DonationStore {
     try {
       await instance.post("donation/", amount);
       this.donations.push(amount);
-      console.log(this.donations);
       navigation.navigate("Checkout");
     } catch (err) {
       console.log("something's not right");
