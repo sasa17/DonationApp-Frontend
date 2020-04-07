@@ -2,7 +2,7 @@ import React from "react";
 import { observer } from "mobx-react";
 
 // NativeBase Components
-import { List, Content, Spinner, Container, ProgressBar } from "native-base";
+import { List, Content, Spinner, Container } from "native-base";
 
 // Stores
 import restaurantStore from "../../stores/restaurantStore";

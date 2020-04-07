@@ -3,6 +3,7 @@ import { View, Text } from "react-native";
 import DonationsBar from "./DonationsBar";
 import menuStore from "../../stores/menuStore";
 import donationStore from "../../stores/donationStore";
+import { observer } from "mobx-react";
 
 class Bar extends Component {
   state = {
@@ -17,7 +18,6 @@ class Bar extends Component {
       }));
     }, 1000);
   }
-
   render() {
     return (
       <View alignItems="center">
@@ -42,4 +42,4 @@ class Bar extends Component {
   }
 }
 
-export default Bar;
+export default observer(Bar);

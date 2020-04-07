@@ -2,7 +2,7 @@ import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
   authContainer: {
-    backgroundColor: "honeydew",
+    backgroundColor: "white",
   },
   authButton: {
     alignItems: "center",
@@ -14,7 +14,7 @@ const styles = StyleSheet.create({
   },
   text: {
     alignItems: "center",
-    color: "white",
+    color: "darkseagreen",
     fontSize: 18,
     fontWeight: "bold",
     opacity: 1,

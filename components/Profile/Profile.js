@@ -10,7 +10,6 @@ import {
   Card,
   Content,
 } from "native-base";
-import { Image } from "react-native";
 import authStore from "../../stores/authStore";
 import profileStore from "../../stores/profileStore";
 import { observer } from "mobx-react";

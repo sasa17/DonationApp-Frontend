@@ -2,34 +2,33 @@ import React, { Component } from "react";
 import { observer } from "mobx-react";
 
 // NativeBase Components
-import { List, Content, Spinner, Container, Text } from "native-base";
+import { Content, Spinner, Text } from "native-base";
 
 // Stores
-import MenuStore from "../../stores/menuStore";
+import menuStore from "../../stores/menuStore";
 
 // Component
 import MenuItem from "./MenuItem";
 import ProfileButton from "../Buttons/ProfileButton";
 import AuthButton from "../Buttons/AuthButton";
 import styles from "./styles";
-import { render } from "react-dom";
 
 class RestaurantDetail extends Component {
   componentDidMount() {
     restaurantID = this.props.navigation.getParam("restaurantID", 1);
-    MenuStore.fetchAllMenuItems(restaurantID);
+    menuStore.fetchAllMenuItems(restaurantID);
   }
 
   render() {
-    if (MenuStore.loading) return <Spinner />;
+    if (menuStore.loading) return <Spinner />;
     total = 0;
-    MenuList = MenuStore.menu.map((menu) => (
+    menuList = menuStore.menu.map((menu) => (
       <MenuItem menu={menu} key={menu.id} />
     ));
     return (
       <Content>
-        {MenuList}
-        <Text style={styles.text}>Total: {MenuStore.total}</Text>
+        {menuList}
+        <Text style={styles.text}>Total: KD {menuStore.total}</Text>
       </Content>
     );
   }

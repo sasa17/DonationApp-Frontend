@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { StyleSheet, Text, View, Animated } from "react-native";
-import menuStore from "../../stores/menuStore";
+import { observer } from "mobx-react";
 
 class DonationsBar extends Component {
   UNSAFE_componentWillMount() {
@@ -63,4 +63,4 @@ class DonationsBar extends Component {
   }
 }
 
-export default DonationsBar;
+export default observer(DonationsBar);

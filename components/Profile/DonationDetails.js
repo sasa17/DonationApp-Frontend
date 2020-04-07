@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 // NativeBase Components
-import { Text, Header, Container, Content, CardItem, Card } from "native-base";
+import { Text, Header, Container, Content } from "native-base";
 import profileStore from "../../stores/profileStore";
 import styles from "./styles";
 
