@@ -8,7 +8,7 @@ import {
   Text,
   Header,
   Card,
-  Content
+  Content,
 } from "native-base";
 import { Image } from "react-native";
 import authStore from "../../stores/authStore";
@@ -25,7 +25,7 @@ class Profile extends Component {
   render() {
     if (profileStore.loading) return <Spinner />;
     const donations = profileStore.profile.past_donations
-      .map(past_donation => (
+      .map((past_donation) => (
         <DonationCard past_donation={past_donation} key={past_donation.id} />
       ))
       .reverse();
@@ -33,29 +33,29 @@ class Profile extends Component {
       <Container style={styles.authContainer}>
         <Content>
           <Header transparent></Header>
+          <Text style={styles.username}>
+            {profileStore.profile.username}'s Profile
+          </Text>
+          <Card>
+            <CardItem>
+              <Text style={styles.subusername}>
+                Name: {profileStore.profile.first_name}{" "}
+                {profileStore.profile.last_name}
+              </Text>
+            </CardItem>
+            <CardItem>
+              <Text style={styles.subusername}>
+                Email: {profileStore.profile.email}
+              </Text>
+            </CardItem>
+          </Card>
         </Content>
-        <Text style={styles.username}>
-          {profileStore.profile.username}'s Profile
-        </Text>
-        <Card>
-          <CardItem>
-            <Text style={styles.subusername}>
-              Name: {profileStore.profile.first_name}{" "}
-              {profileStore.profile.last_name}
-            </Text>
-          </CardItem>
-          <CardItem>
-            <Text style={styles.subusername}>
-              Email: {profileStore.profile.email}
-            </Text>
-          </CardItem>
-        </Card>
-        <Content>
+        <Container style={styles.authContainer}>
           <Header transparent>
             <Text style={styles.username}>Donation History</Text>
           </Header>
           {donations}
-        </Content>
+        </Container>
         <LogoutButton />
       </Container>
     );

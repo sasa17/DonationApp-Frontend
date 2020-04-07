@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { StyleSheet, Text, View, Animated } from "react-native";
+import menuStore from "../../stores/menuStore";
 
 class DonationsBar extends Component {
   UNSAFE_componentWillMount() {
