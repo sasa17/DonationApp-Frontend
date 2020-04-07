@@ -10,7 +10,7 @@ import MenuStore from "../../stores/menuStore";
 // Component
 import MenuItem from "./MenuItem";
 import ProfileButton from "../Buttons/ProfileButton";
-import LoginButton from "../Buttons/LoginButton";
+import AuthButton from "../Buttons/AuthButton";
 import styles from "./styles";
 import { render } from "react-dom";
 
@@ -23,7 +23,7 @@ class RestaurantDetail extends Component {
   render() {
     if (MenuStore.loading) return <Spinner />;
     total = 0;
-    MenuList = MenuStore.menu.map(menu => (
+    MenuList = MenuStore.menu.map((menu) => (
       <MenuItem menu={menu} key={menu.id} />
     ));
     return (
@@ -37,8 +37,8 @@ class RestaurantDetail extends Component {
 
 RestaurantDetail.navigationOptions = {
   title: "Restaurant Detail",
-  headerRight: <LoginButton />,
-  headerLeft: <ProfileButton />
+  headerRight: <AuthButton />,
+  headerLeft: <ProfileButton />,
 };
 
 export default observer(RestaurantDetail);

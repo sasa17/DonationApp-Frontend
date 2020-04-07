@@ -1,16 +1,19 @@
 import React, { Component } from "react";
 import { View, Text } from "react-native";
 import DonationsBar from "./DonationsBar";
+import menuStore from "../../stores/menuStore";
+import donationStore from "../../stores/donationStore";
 
 class Bar extends Component {
   state = {
-    progress: 0.5,
+    progress: 0,
   };
 
   componentDidMount() {
     setInterval(() => {
       this.setState((state) => ({
-        progress: state.progress + 0.1,
+        progress:
+          state.progress + donationStore.checkout_donations.amount / 100,
       }));
     }, 1000);
   }
@@ -31,7 +34,7 @@ class Bar extends Component {
         <View style={{ flexDirection: "row", marginBottom: 20 }}>
           <DonationsBar row progress={this.state.progress} duration={500} />
           <Text style={{ color: "darkseagreen", fontWeight: "bold" }}>
-            100%
+            {menuStore.total}
           </Text>
         </View>
       </View>

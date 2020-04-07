@@ -5,13 +5,13 @@ import { Card, CardItem, Text } from "native-base";
 import { withNavigation } from "react-navigation";
 import styles from "./styles";
 
-const DonationCard = ({ donation, navigation }) => {
+const DonationCard = ({ past_donation, navigation }) => {
   const handleDetail = () =>
-    navigation.navigate("DonationDetail", { id: donation.id });
+    navigation.navigate("DonationDetail", { id: past_donation.id });
   return (
     <Card>
       <CardItem header button onPress={handleDetail}>
-        <Text style={styles.profiletext}>Date: {donation.date}</Text>
+        <Text style={styles.profiletext}>Date: {past_donation.date}</Text>
       </CardItem>
     </Card>
   );

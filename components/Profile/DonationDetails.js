@@ -7,11 +7,12 @@ import styles from "./styles";
 
 class DonationDetails extends Component {
   state = {
-    donation: this.props.navigation.getParam("id")
+    donation: this.props.navigation.getParam("id"),
   };
   render() {
-    const donation = profileStore.profile.past_donations.map(
-      donation => donation
+    const id = this.props.navigation.getParam("id", 1);
+    const donation = profileStore.profile.past_donations.find(
+      (donation) => id === donation.id
     );
 
     return (
@@ -19,7 +20,11 @@ class DonationDetails extends Component {
         <Header transparent>
           <Text style={styles.authTitle}>Donation Date: {donation.date}</Text>
         </Header>
-        <Content>Donation Amount:{donation.amount}</Content>
+        <Content>
+          <Text style={styles.profiletext}>
+            Donation Amount: KD {donation.amount}
+          </Text>
+        </Content>
       </Container>
     );
   }
