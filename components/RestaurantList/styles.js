@@ -14,7 +14,7 @@ const styles = StyleSheet.create({
   },
   text: {
     alignItems: "center",
-    color: "darkseagreen",
+    color: "teal",
     fontSize: 18,
     fontWeight: "bold",
     opacity: 1,

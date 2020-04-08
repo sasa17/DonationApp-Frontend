@@ -46,8 +46,8 @@ class Donation extends Component {
             />
           </Body>
           <Right>
-            <Button backgroundColor="darkseagreen" onPress={this.handlePress}>
-              <Text style={{ color: "honeydew", fontWeight: "bold" }}>
+            <Button backgroundColor="teal" onPress={this.handlePress}>
+              <Text style={{ color: "mintcream", fontWeight: "bold" }}>
                 Donate
               </Text>
             </Button>

@@ -34,7 +34,7 @@ class DonationsBar extends Component {
         >
           {/* Not filled */}
           <View
-            style={[StyleSheet.absoluteFill, { backgroundColor: "honeydew" }]}
+            style={[StyleSheet.absoluteFill, { backgroundColor: "mintcream" }]}
           />
           {/* Filled */}
           <Animated.View
@@ -44,7 +44,7 @@ class DonationsBar extends Component {
               top: 0,
               bottom: 0,
               width: widthInterpolated,
-              backgroundColor: "darkseagreen",
+              backgroundColor: "teal",
               duration: this.props.duration,
             }}
           />

@@ -34,13 +34,13 @@ class Login extends Component {
         <TextInput
           style={styles.authTextInput}
           placeholder="Username"
-          placeholderTextColor="darkseagreen"
+          placeholderTextColor="teal"
           onChangeText={(value) => this.setState({ username: value })}
         />
         <TextInput
           style={styles.authTextInput}
           placeholder="Password"
-          placeholderTextColor="darkseagreen"
+          placeholderTextColor="teal"
           secureTextEntry={true}
           onChangeText={(value) => this.setState({ password: value })}
         />

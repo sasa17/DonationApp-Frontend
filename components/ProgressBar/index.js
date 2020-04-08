@@ -25,7 +25,7 @@ class Bar extends Component {
           style={{
             fontSize: 18,
             marginBottom: 20,
-            color: "darkseagreen",
+            color: "teal",
             fontWeight: "bold",
           }}
         >
@@ -33,7 +33,7 @@ class Bar extends Component {
         </Text>
         <View style={{ flexDirection: "row", marginBottom: 20 }}>
           <DonationsBar row progress={this.state.progress} duration={500} />
-          <Text style={{ color: "darkseagreen", fontWeight: "bold" }}>
+          <Text style={{ color: "teal", fontWeight: "bold" }}>
             {menuStore.total}
           </Text>
         </View>

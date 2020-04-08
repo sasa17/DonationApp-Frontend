@@ -2,22 +2,22 @@ import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
   authContainer: {
-    backgroundColor: "honeydew",
+    backgroundColor: "mintcream",
   },
   authButton: {
     alignSelf: "stretch",
     alignItems: "center",
     padding: 20,
-    backgroundColor: "darkseagreen",
+    backgroundColor: "teal",
     marginTop: 30,
   },
   authButtonText: {
-    color: "honeydew",
+    color: "mintcream",
     fontWeight: "bold",
     fontSize: 18,
   },
   card: {
-    backgroundColor: "honeydew",
+    backgroundColor: "mintcream",
   },
   listStyle: {
     borderBottomWidth: 0,
@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   text: {
-    color: "darkseagreen",
+    color: "teal",
     fontSize: 15,
     marginLeft: 16,
 
@@ -34,7 +34,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   newText: {
-    color: "darkseagreen",
+    color: "teal",
     fontSize: 18,
     fontWeight: "bold",
     marginLeft: 16,
@@ -43,12 +43,12 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   divider: {
-    borderBottomColor: "darkseagreen",
+    borderBottomColor: "teal",
     borderBottomWidth: 1,
   },
   top: {
     marginLeft: 0,
-    backgroundColor: "darkseagreen",
+    backgroundColor: "teal",
   },
   middleText: {
     color: "white",

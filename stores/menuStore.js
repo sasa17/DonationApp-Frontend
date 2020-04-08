@@ -5,7 +5,7 @@ class MenuStore {
   menu = [];
   loading = true;
 
-  fetchAllMenuItems = async restaurant => {
+  fetchAllMenuItems = async (restaurant) => {
     try {
       const res = await instance.get(`restaurant/${restaurant}`);
       const menu = res.data.menu;
@@ -18,16 +18,15 @@ class MenuStore {
 
   get total() {
     let total = 0;
-    this.menu.forEach(item => (total += item.total));
+    this.menu.forEach((item) => (total += item.total));
     return total;
   }
 }
 decorate(MenuStore, {
   menu: observable,
   loading: observable,
-  total: computed
+  total: computed,
 });
 
 const menuStore = new MenuStore();
-
 export default menuStore;

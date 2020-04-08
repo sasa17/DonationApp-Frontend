@@ -48,19 +48,19 @@ const RestaurantItem = ({ restaurant, navigation }) => {
         </Left>
         <Body>
           <Text style={styles.text}>{restaurant.name}</Text>
-          <Text note numberOfLines={1} style={{ color: "darkseagreen" }}>
+          <Text note numberOfLines={1} style={{ color: "teal" }}>
             Location: {restaurant.location}
           </Text>
           <Text
             note
             numberOfLines={1}
-            style={{ color: "darkseagreen", fontSize: "12" }}
+            style={{ color: "teal", fontSize: "12" }}
           >
             Description: {restaurant.description}
           </Text>
         </Body>
         <Right>
-          <Text note numberOfLines={2} style={{ color: "darkseagreen" }}>
+          <Text note numberOfLines={2} style={{ color: "teal" }}>
             Total Required: KD {menuStore.total}
           </Text>
         </Right>

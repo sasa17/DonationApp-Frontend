@@ -14,7 +14,7 @@ const LoginButton = ({ navigation }) => {
       <Icon
         name="logout"
         type="AntDesign"
-        style={{ color: "darkseagreen" }}
+        style={{ color: "teal" }}
         onPress={handleLogout}
       />
     </Button>
@@ -23,7 +23,7 @@ const LoginButton = ({ navigation }) => {
       <Icon
         name="login"
         type="AntDesign"
-        style={{ color: "darkseagreen" }}
+        style={{ color: "teal" }}
         onPress={handleLogin}
       />
     </Button>

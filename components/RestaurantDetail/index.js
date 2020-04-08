@@ -21,8 +21,7 @@ class RestaurantDetail extends Component {
 
   render() {
     if (menuStore.loading) return <Spinner />;
-    total = 0;
-    menuList = menuStore.menu.map((menu) => (
+    const menuList = menuStore.menu.map((menu) => (
       <MenuItem menu={menu} key={menu.id} />
     ));
     return (

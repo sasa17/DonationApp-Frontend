@@ -5,35 +5,35 @@ const styles = StyleSheet.create({
     alignSelf: "stretch",
     alignItems: "center",
     padding: 20,
-    backgroundColor: "darkseagreen",
-    marginTop: 30
+    backgroundColor: "teal",
+    marginTop: 30,
   },
   authButtonText: {
     color: "#FCFDFF",
     fontWeight: "bold",
-    fontSize: 18
+    fontSize: 18,
   },
   authContainer: {
-    backgroundColor: "honeydew"
+    backgroundColor: "mintcream",
   },
   authOther: {
-    color: "darkseagreen",
-    marginTop: 15
+    color: "teal",
+    marginTop: 15,
   },
   authTextInput: {
     alignSelf: "stretch",
     textAlign: "left",
     height: 40,
     marginBottom: 30,
-    color: "darkseagreen",
-    borderBottomColor: "darkseagreen",
-    borderBottomWidth: 1
+    color: "teal",
+    borderBottomColor: "teal",
+    borderBottomWidth: 1,
   },
   authTitle: {
-    color: "darkseagreen",
+    color: "teal",
     fontSize: 22,
     marginBottom: 20,
-    borderBottomColor: "darkseagreen"
+    borderBottomColor: "teal",
   },
   profileImage: {
     width: 130,
@@ -41,25 +41,25 @@ const styles = StyleSheet.create({
     borderRadius: 63,
     borderWidth: 4,
     borderColor: "#FF6347",
-    marginBottom: 10
+    marginBottom: 10,
   },
   profiletext: {
     textAlign: "left",
-    color: "darkseagreen",
-    fontSize: 18
+    color: "teal",
+    fontSize: 18,
   },
   username: {
-    color: "darkseagreen",
+    color: "teal",
     fontSize: 22,
     alignSelf: "center",
-    marginLeft: 10
+    marginLeft: 10,
   },
   subusername: {
-    color: "darkseagreen",
+    color: "teal",
     fontSize: 18,
     alignSelf: "center",
-    marginLeft: 10
-  }
+    marginLeft: 10,
+  },
 });
 
 export default styles;
