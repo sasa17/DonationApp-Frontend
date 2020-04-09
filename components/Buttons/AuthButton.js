@@ -10,7 +10,7 @@ const LoginButton = ({ navigation }) => {
   const handleLogout = () => authStore.logout(navigation);
   const handleLogin = () => navigation.navigate("Login");
   return authStore.user ? (
-    <Button transparent >
+    <Button transparent onPress={handleLogout}>
       <Text style={{color:"darkgreen", alignSelf: "center"}}>Logout</Text>
       {/* <Icon
         name="logout"
