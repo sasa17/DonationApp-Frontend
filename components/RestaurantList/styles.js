@@ -2,7 +2,7 @@ import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
   authContainer: {
-    backgroundColor: "white",
+    backgroundColor: "snow",
   },
   authButton: {
     alignItems: "center",
@@ -12,9 +12,19 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: "#fff",
   },
+  headerText: {
+    alignItems: "center",
+    color: "darkgreen",
+    fontSize: 18,
+    fontWeight: "bold",
+    opacity: 1,
+    marginTop: 20,
+    marginBottom: 10,
+    alignSelf: "center",
+  },
   text: {
     alignItems: "center",
-    color: "darkseagreen",
+    color: "darkgreen",
     fontSize: 18,
     fontWeight: "bold",
     opacity: 1,
@@ -30,7 +40,7 @@ const styles = StyleSheet.create({
     right: 0,
 
     opacity: 0.5,
-    backgroundColor: "black",
+    backgroundColor: "snow",
     height: "100%",
     width: "100%",
   },
@@ -40,7 +50,7 @@ const styles = StyleSheet.create({
     borderRightWidth: 0,
     borderLeftWidth: 0,
     borderBottomWidth: 0,
-    height: 180,
+    height: 100,
     flexDirection: "row",
   },
   transparent: {
@@ -52,7 +62,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
   },
   thumbnail: {
-    backgroundColor: "white",
+    backgroundColor: "snow",
     opacity: 1,
   },
   background: {

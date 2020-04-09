@@ -14,7 +14,7 @@ const ProfileButton = ({ navigation }) => {
         <Icon
           name="user"
           type="AntDesign"
-          style={{ color: "darkseagreen" }}
+          style={{ color: "darkgreen" }}
           onPress={handleProfile}
         />
       </Button>

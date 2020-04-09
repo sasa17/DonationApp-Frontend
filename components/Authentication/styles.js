@@ -5,53 +5,53 @@ const styles = StyleSheet.create({
     alignSelf: "stretch",
     alignItems: "center",
     padding: 20,
-    backgroundColor: "darkseagreen",
-    marginTop: 30
+    backgroundColor: "darkgreen",
+    marginTop: 30,
   },
   authButtonText: {
-    color: "honeydew",
+    color: "snow",
     fontWeight: "bold",
-    fontSize: 18
+    fontSize: 18,
   },
   authContainer: {
     flex: 1,
     alignSelf: "stretch",
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "honeydew",
+    backgroundColor: "snow",
     paddingRight: 60,
-    paddingLeft: 60
+    paddingLeft: 60,
   },
   authOther: {
-    color: "darkseagreen",
-    marginTop: 15
+    color: "darkgreen",
+    marginTop: 15,
   },
   authTextInput: {
     alignSelf: "stretch",
     textAlign: "left",
     height: 40,
     marginBottom: 30,
-    color: "darkseagreen",
-    borderBottomColor: "darkseagreen",
-    borderBottomWidth: 1
+    color: "darkgreen",
+    borderBottomColor: "darkgreen",
+    borderBottomWidth: 1,
   },
   authTitle: {
-    color: "darkseagreen",
+    color: "darkgreen",
     fontSize: 24,
     marginBottom: 20,
-    borderBottomColor: "darkseagreen"
+    borderBottomColor: "darkgreen",
   },
   profileImage: {
     height: 75,
     width: 150,
     flex: 0.5,
-    marginBottom: 10
+    marginBottom: 10,
   },
   profiletext: {
     textAlign: "left",
-    color: "darkseagreen",
-    fontSize: 16
-  }
+    color: "darkgreen",
+    fontSize: 16,
+  },
 });
 
 export default styles;

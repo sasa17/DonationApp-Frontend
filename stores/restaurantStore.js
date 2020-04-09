@@ -1,4 +1,4 @@
-import { decorate, observable } from "mobx";
+import { decorate, observable, computed } from "mobx";
 import { instance } from "./instance";
 
 class RestaurantStore {
@@ -15,10 +15,18 @@ class RestaurantStore {
       console.error(err);
     }
   };
+
+  get total() {
+    let total = 0;
+    this.restaurants.forEach((restaurant) => (total += restaurant.menu_total));
+    return total;
+  }
 }
+
 decorate(RestaurantStore, {
   restaurants: observable,
-  loading: observable
+  loading: observable,
+  total: computed,
 });
 
 const restaurantStore = new RestaurantStore();

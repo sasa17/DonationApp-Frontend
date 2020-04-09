@@ -3,6 +3,7 @@ import { StyleSheet, Text, View, Animated } from "react-native";
 import { observer } from "mobx-react";
 
 class DonationsBar extends Component {
+
   UNSAFE_componentWillMount() {
     this.animation = new Animated.Value(this.props.progress);
   }
@@ -22,19 +23,21 @@ class DonationsBar extends Component {
       extrapolate: "clamp",
     });
     return (
-      <View style={{ flex: 1, flexDirection: "row", height: 20 }}>
+      <View style={{ flex: 1, flexDirection: "row", height: 15 }}>
         {/* Bar */}
         <View
           style={{
             flex: 1,
             borderColor: "#000",
             borderWidth: 1,
-            borderRadius: 2,
+            borderRadius: 10,
+            marginLeft: 5,
+            marginRight: 5
           }}
         >
           {/* Not filled */}
           <View
-            style={[StyleSheet.absoluteFill, { backgroundColor: "honeydew" }]}
+            style={[StyleSheet.absoluteFill, { backgroundColor: "snow" }]}
           />
           {/* Filled */}
           <Animated.View
@@ -44,15 +47,16 @@ class DonationsBar extends Component {
               top: 0,
               bottom: 0,
               width: widthInterpolated,
-              backgroundColor: "darkseagreen",
+              backgroundColor: "darkgreen",
               duration: this.props.duration,
+              borderRadius: 10,
             }}
           />
           <Text
             style={{
               textAlign: "center",
               alignItems: "center",
-              color: "white",
+              color: "darkgreen",
             }}
           >
             {this.props.progress}

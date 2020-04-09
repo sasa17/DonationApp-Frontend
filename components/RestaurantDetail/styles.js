@@ -2,10 +2,7 @@ import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
   authContainer: {
-    backgroundColor: "honeydew"
-  },
-  card: {
-    backgroundColor: "transparent"
+    backgroundColor: "snow",
   },
   authButton: {
     alignItems: "center",
@@ -13,18 +10,24 @@ const styles = StyleSheet.create({
     backgroundColor: "transparent",
     borderRadius: 20,
     borderWidth: 1,
-    borderColor: "#fff"
+    borderColor: "#fff",
+  },
+  headerText: {
+    alignItems: "center",
+    color: "darkgreen",
+    fontSize: 16,
+    fontWeight: "bold",
+    opacity: 1,
   },
   text: {
     alignItems: "center",
-    color: "black",
-    fontSize: 18,
-    fontWeight: "bold",
-    opacity: 1
+    color: "darkgreen",
+    fontSize: 16,
+    opacity: 1,
   },
   divider: {
     borderBottomColor: "black",
-    borderBottomWidth: 1
+    borderBottomWidth: 1,
   },
   overlay: {
     flex: 1,
@@ -33,9 +36,9 @@ const styles = StyleSheet.create({
     right: 0,
 
     opacity: 0.5,
-    backgroundColor: "black",
+    backgroundColor: "snow",
     height: "100%",
-    width: "100%"
+    width: "100%",
   },
   listitem: {
     backgroundColor: "transparent",
@@ -44,7 +47,7 @@ const styles = StyleSheet.create({
     borderLeftWidth: 0,
     borderBottomWidth: 0,
     height: 180,
-    flexDirection: "row"
+    flexDirection: "row",
   },
   transparent: {
     backgroundColor: "transparent",
@@ -52,15 +55,29 @@ const styles = StyleSheet.create({
     borderRightWidth: 0,
     borderLeftWidth: 0,
     borderBottomWidth: 0,
-    flexDirection: "row"
+    flexDirection: "row",
   },
   thumbnail: {
-    backgroundColor: "white",
-    opacity: 1
+    backgroundColor: "snow",
+    opacity: 1,
   },
   background: {
     width: null,
-    flex: 1
-  }
+    flex: 1,
+  },
+  newText: {
+    color: "darkgreen",
+    fontSize: 18,
+    fontWeight: "bold",
+    marginLeft: 18,
+    alignContent: "center"
+  },
+  card: {
+    backgroundColor: "transparent",
+  },
+  total_card: {
+    backgroundColor: "transparent",
+    alignSelf: "center"
+  },
 });
 export default styles;
