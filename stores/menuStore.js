@@ -5,9 +5,9 @@ class MenuStore {
   menu = [];
   loading = true;
 
-  fetchAllMenuItems = async (restaurant) => {
+  fetchAllMenuItems = async (restaurantID) => {
     try {
-      const res = await instance.get(`restaurant/${restaurant}`);
+      const res = await instance.get(`restaurant/${restaurantID}`);
       const menu = res.data.menu;
       this.menu = menu;
       this.loading = false;

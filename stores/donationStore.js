@@ -32,7 +32,6 @@ class DonationStore {
 decorate(DonationStore, {
   donations: observable,
   checkout_donations: observable,
-  loading: observable,
 });
 
 const donationStore = new DonationStore();
