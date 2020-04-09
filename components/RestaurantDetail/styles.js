@@ -2,10 +2,7 @@ import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
   authContainer: {
-    backgroundColor: "mintcream",
-  },
-  card: {
-    backgroundColor: "transparent",
+    backgroundColor: "snow",
   },
   authButton: {
     alignItems: "center",
@@ -15,11 +12,17 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: "#fff",
   },
+  headerText: {
+    alignItems: "center",
+    color: "darkgreen",
+    fontSize: 16,
+    fontWeight: "bold",
+    opacity: 1,
+  },
   text: {
     alignItems: "center",
-    color: "black",
-    fontSize: 18,
-    fontWeight: "bold",
+    color: "darkgreen",
+    fontSize: 16,
     opacity: 1,
   },
   divider: {
@@ -33,7 +36,7 @@ const styles = StyleSheet.create({
     right: 0,
 
     opacity: 0.5,
-    backgroundColor: "black",
+    backgroundColor: "snow",
     height: "100%",
     width: "100%",
   },
@@ -55,12 +58,26 @@ const styles = StyleSheet.create({
     flexDirection: "row",
   },
   thumbnail: {
-    backgroundColor: "white",
+    backgroundColor: "snow",
     opacity: 1,
   },
   background: {
     width: null,
     flex: 1,
+  },
+  newText: {
+    color: "darkgreen",
+    fontSize: 18,
+    fontWeight: "bold",
+    marginLeft: 18,
+    alignContent: "center"
+  },
+  card: {
+    backgroundColor: "transparent",
+  },
+  total_card: {
+    backgroundColor: "transparent",
+    alignSelf: "center"
   },
 });
 export default styles;

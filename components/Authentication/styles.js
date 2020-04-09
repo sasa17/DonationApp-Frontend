@@ -5,11 +5,11 @@ const styles = StyleSheet.create({
     alignSelf: "stretch",
     alignItems: "center",
     padding: 20,
-    backgroundColor: "teal",
+    backgroundColor: "darkgreen",
     marginTop: 30,
   },
   authButtonText: {
-    color: "mintcream",
+    color: "snow",
     fontWeight: "bold",
     fontSize: 18,
   },
@@ -18,12 +18,12 @@ const styles = StyleSheet.create({
     alignSelf: "stretch",
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "mintcream",
+    backgroundColor: "snow",
     paddingRight: 60,
     paddingLeft: 60,
   },
   authOther: {
-    color: "teal",
+    color: "darkgreen",
     marginTop: 15,
   },
   authTextInput: {
@@ -31,15 +31,15 @@ const styles = StyleSheet.create({
     textAlign: "left",
     height: 40,
     marginBottom: 30,
-    color: "teal",
-    borderBottomColor: "teal",
+    color: "darkgreen",
+    borderBottomColor: "darkgreen",
     borderBottomWidth: 1,
   },
   authTitle: {
-    color: "teal",
+    color: "darkgreen",
     fontSize: 24,
     marginBottom: 20,
-    borderBottomColor: "teal",
+    borderBottomColor: "darkgreen",
   },
   profileImage: {
     height: 75,
@@ -49,7 +49,7 @@ const styles = StyleSheet.create({
   },
   profiletext: {
     textAlign: "left",
-    color: "teal",
+    color: "darkgreen",
     fontSize: 16,
   },
 });

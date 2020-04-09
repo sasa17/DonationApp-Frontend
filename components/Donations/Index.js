@@ -16,7 +16,7 @@ class Donation extends Component {
 
   handlePress = () => {
     if (authStore.user)
-      return donationStore.addDonation(this.state, this.props.navigation);
+      return donationStore.addDonation(this.state, this.props.navigation), this.setState({ amount: "" });
     else
       Alert.alert("User not found", "Please Login or Register to continue", [
         {
@@ -46,8 +46,8 @@ class Donation extends Component {
             />
           </Body>
           <Right>
-            <Button backgroundColor="teal" onPress={this.handlePress}>
-              <Text style={{ color: "mintcream", fontWeight: "bold" }}>
+            <Button style ={{backgroundColor:"darkgreen"}} onPress={this.handlePress}>
+              <Text style={{ color: "snow", fontWeight: "bold" }}>
                 Donate
               </Text>
             </Button>

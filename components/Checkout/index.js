@@ -27,10 +27,9 @@ class Checkout extends Component {
     const checkoutAmount = donationStore.donations.map((checkout_donation) => (
       <CheckoutItem
         donation={checkout_donation}
-        key={profileStore.profile.username}
+        key={checkout_donation.id}
       />
     ));
-    console.log("checkout", checkoutAmount);
     const handleCheckout = () => {
       Alert.alert("Thank you for feeding forward!"),
         donationStore.checkoutDonation(this.props.navigation);

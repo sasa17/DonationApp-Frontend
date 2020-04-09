@@ -2,22 +2,22 @@ import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
   authContainer: {
-    backgroundColor: "mintcream",
+    backgroundColor: "snow",
   },
   authButton: {
     alignSelf: "stretch",
     alignItems: "center",
     padding: 20,
-    backgroundColor: "teal",
+    backgroundColor: "darkgreen",
     marginTop: 30,
   },
   authButtonText: {
-    color: "mintcream",
+    color: "snow",
     fontWeight: "bold",
     fontSize: 18,
   },
   card: {
-    backgroundColor: "mintcream",
+    backgroundColor: "snow",
   },
   listStyle: {
     borderBottomWidth: 0,
@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   text: {
-    color: "teal",
+    color: "darkgreen",
     fontSize: 15,
     marginLeft: 16,
 
@@ -34,7 +34,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   newText: {
-    color: "teal",
+    color: "darkgreen",
     fontSize: 18,
     fontWeight: "bold",
     marginLeft: 16,
@@ -43,15 +43,15 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   divider: {
-    borderBottomColor: "teal",
+    borderBottomColor: "darkgreen",
     borderBottomWidth: 1,
   },
   top: {
     marginLeft: 0,
-    backgroundColor: "teal",
+    backgroundColor: "darkgreen",
   },
   middleText: {
-    color: "white",
+    color: "snow",
     fontWeight: "bold",
     fontSize: 17,
     alignSelf: "center",
@@ -59,10 +59,10 @@ const styles = StyleSheet.create({
   addIcon: {
     fontSize: 40,
     fontWeight: "bold",
-    color: "white",
+    color: "snow",
   },
   item: {
-    color: "white",
+    color: "snow",
   },
   picker: {
     width: 150,

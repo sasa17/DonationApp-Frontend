@@ -1,6 +1,7 @@
 import React from "react";
 import { withNavigation } from "react-navigation";
-import { ImageBackground, View } from "react-native";
+import { View } from "react-native";
+import { observer } from "mobx-react";
 
 // NativeBase Components
 import {
@@ -17,10 +18,6 @@ import {
 // Style
 import styles from "./styles";
 
-// Stores
-import menuStore from "../../stores/menuStore";
-import { observer } from "mobx-react";
-
 const RestaurantItem = ({ restaurant, navigation }) => {
   const handlePress = () =>
     navigation.navigate("Detail", {
@@ -29,46 +26,33 @@ const RestaurantItem = ({ restaurant, navigation }) => {
     });
 
   return (
-    // <ImageBackground
-    //   source={{ uri: restaurant.image }}
-    //   style={styles.background}
-    // >
-    <>
-      {/* <View style={styles.overlay} /> */}
-      <ListItem thumbnail button onPress={handlePress} style={styles.listitem}>
-        {/* <Card style={styles.transparent}>
-          <CardItem style={styles.transparent}> */}
+    <Card>
+      <View style={styles.overlay} />
+      <ListItem transparent thumbnail button onPress={handlePress} style={styles.listitem}>
         <Left>
           <Thumbnail
             square
             source={{ uri: restaurant.image }}
             resizeMode="contain"
-            // style={styles.thumbnail}
           />
         </Left>
-        <Body>
+        <Body transparent>
           <Text style={styles.text}>{restaurant.name}</Text>
-          <Text note numberOfLines={1} style={{ color: "teal" }}>
+          <Text note numberOfLines={2} style={{ color: "darkgreen", fontSize: 12 }}>
             Location: {restaurant.location}
-          </Text>
-          <Text
-            note
-            numberOfLines={1}
-            style={{ color: "teal", fontSize: "12" }}
-          >
+            {"\n"}
             Description: {restaurant.description}
           </Text>
         </Body>
         <Right>
-          <Text note numberOfLines={2} style={{ color: "teal" }}>
-            Total Required: KD {menuStore.total}
+          <Text note numberOfLines={2} style={{ color: "darkgreen", fontWeight:"bold"}}>
+            Donation {"\n"}Required: </Text>
+            <Text note numberOfLines={1} style={{ color: "darkgreen", fontWeight:"bold" }}>
+            KD {restaurant.menu_total}
           </Text>
         </Right>
-        {/* </CardItem>
-        </Card> */}
       </ListItem>
-      {/* </ImageBackground> */}
-    </>
+    </Card>
   );
 };
 

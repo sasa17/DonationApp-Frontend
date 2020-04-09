@@ -16,20 +16,9 @@ class RestaurantStore {
     }
   };
 
-  fetchAllRestaurantDetail = async (restaurant) => {
-    try {
-      const res = await instance.get(`restaurant/${restaurant}`);
-      const menu = res.data.menu;
-      this.menu = menu;
-      this.loading = false;
-    } catch (err) {
-      console.error(err);
-    }
-  };
-
   get total() {
     let total = 0;
-    this.menu.forEach((item) => (total += item.total));
+    this.restaurants.forEach((restaurant) => (total += restaurant.menu_total));
     return total;
   }
 }

@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { observer } from "mobx-react";
 
 // NativeBase Components
-import { Content, Spinner, Text } from "native-base";
+import { Content, Spinner, Text, Card, CardItem } from "native-base";
 
 // Stores
 import menuStore from "../../stores/menuStore";
@@ -27,7 +27,11 @@ class RestaurantDetail extends Component {
     return (
       <Content>
         {menuList}
-        <Text style={styles.text}>Total: KD {menuStore.total}</Text>
+        <Card style={styles.card}>
+      <CardItem style={styles.total_card} >
+        <Text style={styles.newText}>Total: KD {menuStore.total}</Text>
+        </CardItem>
+        </Card>
       </Content>
     );
   }
@@ -36,7 +40,6 @@ class RestaurantDetail extends Component {
 RestaurantDetail.navigationOptions = {
   title: "Restaurant Detail",
   headerRight: <AuthButton />,
-  headerLeft: <ProfileButton />,
 };
 
 export default observer(RestaurantDetail);
