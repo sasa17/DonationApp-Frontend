@@ -14,6 +14,7 @@ import LoginButton from "../Buttons/AuthButton";
 import styles from "./styles";
 import DonationItem from "../Donations/Index";
 import Bar from "../ProgressBar/index";
+import Bar2 from "../ProgressBar/Bar2";
 
 const RestaurantList = () => {
   if (restaurantStore.loading) return <Spinner />;
@@ -24,7 +25,7 @@ const RestaurantList = () => {
     <Container style={styles.authContainer}>
       <DonationItem />
       <Card>
-        <Bar />
+        <Bar2 />
       </Card>
       <Text style={styles.headerText}>Participating Restaurants</Text>
       <Content>
