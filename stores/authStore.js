@@ -3,6 +3,7 @@ import { AsyncStorage } from "react-native";
 import jwt_decode from "jwt-decode";
 import { instance } from "./instance";
 import { Alert } from "react-native";
+import donationStore from "./donationStore";
 
 class AuthStore {
   user = null;
@@ -15,6 +16,7 @@ class AuthStore {
       instance.defaults.headers.common.Authorization = `Bearer ${token}`;
       // Set current user
       this.user = jwt_decode(token);
+      donationStore.fetchAllDonations();
     } else {
       await AsyncStorage.removeItem("myToken");
       delete instance.defaults.headers.common.Authorization;
@@ -83,4 +85,5 @@ decorate(AuthStore, {
 });
 
 const authStore = new AuthStore();
+authStore.checkForToken();
 export default authStore;

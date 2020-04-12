@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { View, Text } from "react-native";
+import { View, Text, Spinner } from "react-native";
 import DonationsBar from "./DonationsBar";
 import restaurantStore from "../../stores/restaurantStore";
 import donationStore from "../../stores/donationStore";
@@ -13,12 +13,12 @@ class Bar extends Component {
   componentDidMount() {
     setInterval(() => {
       this.setState((state) => ({
-        progress:
-          state.progress + (donationStore.checkout_donations),
+        progress: state.progress + donationStore.checkout_donations,
       }));
     }, restaurantStore.total);
   }
   render() {
+    if (donationStore.loading) return <Spinner />;
     return (
       <View alignItems="center">
         <Text
@@ -35,7 +35,8 @@ class Bar extends Component {
         <View style={{ flexDirection: "row", marginBottom: 20 }}>
           <DonationsBar row progress={this.state.progress} duration={100} />
           <Text style={{ color: "darkgreen", fontWeight: "bold" }}>
-          KD {restaurantStore.total}</Text>
+            KD {restaurantStore.total}
+          </Text>
         </View>
       </View>
     );

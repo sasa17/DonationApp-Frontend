@@ -5,6 +5,7 @@ class DonationStore {
   all_donations = [];
   donations = [];
   checkout_donations = [];
+  loading = true;
 
   fetchAllDonations = async () => {
     try {
@@ -16,12 +17,6 @@ class DonationStore {
       console.error(err);
     }
   };
-  get total() {
-    const total = 0;
-    const amount = this.all_donations.map(item=>item.amount)
-    console.log("map", amount)
-
-  }
 
   addDonation = async (amount, navigation) => {
     try {
@@ -46,15 +41,21 @@ class DonationStore {
       console.log("something went wrong while checkout");
     }
   };
+
+  get total() {
+    let total = 0.0;
+    this.all_donations.forEach((item) => (total += Number(item.amount)));
+    console.log("donationsss", this.all_donations);
+    return total;
+  }
 }
 decorate(DonationStore, {
   all_donations: observable,
+  loading: observable,
   donations: observable,
   checkout_donations: observable,
-  total: computed
+  total: computed,
 });
 
 const donationStore = new DonationStore();
-donationStore.fetchAllDonations();
-
 export default donationStore;

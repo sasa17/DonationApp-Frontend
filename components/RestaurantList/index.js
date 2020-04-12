@@ -1,8 +1,8 @@
-import React from "react";
+import React, { Component } from "react";
 import { observer } from "mobx-react";
 
 // NativeBase Components
-import { List, Content, Spinner, Container, Card, Text} from "native-base";
+import { List, Content, Spinner, Container, Card, Text } from "native-base";
 
 // Stores
 import restaurantStore from "../../stores/restaurantStore";
@@ -15,26 +15,29 @@ import styles from "./styles";
 import DonationItem from "../Donations/Index";
 import Bar from "../ProgressBar/index";
 import Bar2 from "../ProgressBar/Bar2";
+import donationStore from "../../stores/donationStore";
 
-const RestaurantList = () => {
-  if (restaurantStore.loading) return <Spinner />;
-  const RestaurantList = restaurantStore.restaurants.map((restaurant) => (
-    <RestaurantItem restaurant={restaurant} key={restaurant.id} />
-  ));
-  return (
-    <Container style={styles.authContainer}>
-      <DonationItem />
-      <Card>
-        <Bar2 />
-      </Card>
-      <Text style={styles.headerText}>Participating Restaurants</Text>
-      <Content>
-        <List>{RestaurantList}</List>
-      </Content>
-    </Container>
-  );
-};
-
+class RestaurantList extends Component {
+  render() {
+    if (restaurantStore.loading) return <Spinner />;
+    if (donationStore.loading) return <Spinner />;
+    const RestaurantList = restaurantStore.restaurants.map((restaurant) => (
+      <RestaurantItem restaurant={restaurant} key={restaurant.id} />
+    ));
+    return (
+      <Container style={styles.authContainer}>
+        <DonationItem />
+        <Card>
+          <Bar2 />
+        </Card>
+        <Text style={styles.headerText}>Participating Restaurants</Text>
+        <Content>
+          <List>{RestaurantList}</List>
+        </Content>
+      </Container>
+    );
+  }
+}
 RestaurantList.navigationOptions = {
   title: "Feed Forward",
   backgroundColor: "snow",

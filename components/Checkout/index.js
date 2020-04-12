@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 // NativeBase Components
-import {Content, Text, Container, Button} from "native-base";
+import { Content, Text, Container, Button, Spinner } from "native-base";
 import { Alert } from "react-native";
 
 import donationStore from "../../stores/donationStore";
@@ -13,10 +13,7 @@ class Checkout extends Component {
   render() {
     if (donationStore.loading) return <Spinner />;
     const checkoutAmount = donationStore.donations.map((checkout_donation) => (
-      <CheckoutItem
-        donation={checkout_donation}
-        key={donation.id}
-      />
+      <CheckoutItem donation={checkout_donation} key={checkout_donation.id} />
     ));
     const handleCheckout = () => {
       Alert.alert("Thank you for feeding forward!"),

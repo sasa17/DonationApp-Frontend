@@ -10,6 +10,7 @@ import { Text } from "native-base";
 
 // Store
 import authStore from "../../stores/authStore";
+import donationStore from "../../stores/donationStore";
 
 class Login extends Component {
   state = {
@@ -21,8 +22,7 @@ class Login extends Component {
     authStore.login(this.state, this.props.navigation);
   };
 
-  async componentDidMount() {
-    await authStore.checkForToken();
+  componentDidMount() {
     if (authStore.user) this.props.navigation.navigate("List");
   }
 

@@ -1,7 +1,8 @@
-import React, {useRef, useState, useEffect} from 'react';
-import { Text, View, StyleSheet, Animated } from 'react-native';
-import Constants from 'expo-constants';
+import React, { useRef, useState, useEffect } from "react";
+import { Text, View, StyleSheet, Animated } from "react-native";
+import Constants from "expo-constants";
 import restaurantStore from "../../stores/restaurantStore";
+import donationStore from "../../stores/donationStore";
 
 // setInterval custom hook by Dan Abramov
 function useInterval(callback, delay) {
@@ -24,56 +25,55 @@ function useInterval(callback, delay) {
   }, [delay]);
 }
 
-
-const App = () => {
+const Bar2 = () => {
   let animation = useRef(new Animated.Value(0));
-  const [progress, setProgress] = useState(0);
+  const [progress, setProgress] = useState(donationStore.total);
   useInterval(() => {
     // update progress until 100
-    if(progress < restaurantStore.total) {
-      setProgress(progress + 5);
+    if (progress < restaurantStore.total) {
+      setProgress(progress);
     }
   }, 1000);
 
   useEffect(() => {
     Animated.timing(animation.current, {
       toValue: progress,
-      duration: 100
+      duration: 100,
     }).start();
-  },[progress])
+  }, [progress]);
 
   const width = animation.current.interpolate({
     inputRange: [0, restaurantStore.total],
     outputRange: ["0%", `${restaurantStore.total}%`],
-    extrapolate: "clamp"
-  })
+    extrapolate: "clamp",
+  });
 
   return (
     <View>
-      <Text>
-        Loading…..
-      </Text>
+      <Text>Loading…..</Text>
       <View style={styles.progressBar}>
-        <Animated.View style={[StyleSheet.absoluteFill, { backgroundColor: "#8BED4F", width }]}/>
+        <Animated.View
+          style={[
+            StyleSheet.absoluteFill,
+            { backgroundColor: "#8BED4F", width },
+          ]}
+        />
       </View>
-      <Text>
-        {`${progress}%`}
-      </Text>
-
+      <Text>{`${progress}`}</Text>
     </View>
   );
-}
+};
 
-export default App;
+export default Bar2;
 
 const styles = StyleSheet.create({
   progressBar: {
-    flexDirection: 'row',
+    flexDirection: "row",
     height: 20,
-    width: '100%',
-    backgroundColor: 'white',
-    borderColor: '#000',
+    width: "100%",
+    backgroundColor: "white",
+    borderColor: "#000",
     borderWidth: 2,
-    borderRadius: 5
-  }
+    borderRadius: 5,
+  },
 });

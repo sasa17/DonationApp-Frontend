@@ -9,7 +9,6 @@ import Login from "../components/Authentication/Login";
 import Register from "../components/Authentication/Register";
 import Checkout from "../components/Checkout";
 
-
 const AppNav = createStackNavigator(
   {
     Register: Register,
