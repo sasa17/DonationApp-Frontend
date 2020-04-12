@@ -14,7 +14,7 @@ class Bar extends Component {
     setInterval(() => {
       this.setState((state) => ({
         progress:
-          state.progress + (donationStore.checkout_donations/100),
+          state.progress + (donationStore.checkout_donations),
       }));
     }, restaurantStore.total);
   }

@@ -1,10 +1,12 @@
 import React, { Component } from "react";
 import { StyleSheet, Text, View, Animated } from "react-native";
 import { observer } from "mobx-react";
+import donationStore from "../../stores/donationStore";
 
 class DonationsBar extends Component {
 
-  UNSAFE_componentWillMount() {
+  componentDidMount() {
+    donationStore.fetchAllDonations(),
     this.animation = new Animated.Value(this.props.progress);
   }
 
@@ -18,7 +20,7 @@ class DonationsBar extends Component {
   }
   render() {
     const widthInterpolated = this.animation.interpolate({
-      inputRange: [0, 1],
+      inputRange: [0, restaurantStore.total],
       outputRange: ["0%", "100%"],
       extrapolate: "clamp",
     });

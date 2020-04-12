@@ -1,9 +1,27 @@
-import { decorate, observable } from "mobx";
+import { decorate, observable, computed } from "mobx";
 import { instance } from "./instance";
 
 class DonationStore {
+  all_donations = [];
   donations = [];
   checkout_donations = [];
+
+  fetchAllDonations = async () => {
+    try {
+      const res = await instance.get(`donation/list/`);
+      const donation = res.data;
+      this.all_donations = donation;
+      this.loading = false;
+    } catch (err) {
+      console.error(err);
+    }
+  };
+  get total() {
+    const total = 0;
+    const amount = this.all_donations.map(item=>item.amount)
+    console.log("map", amount)
+
+  }
 
   addDonation = async (amount, navigation) => {
     try {
@@ -30,10 +48,13 @@ class DonationStore {
   };
 }
 decorate(DonationStore, {
+  all_donations: observable,
   donations: observable,
   checkout_donations: observable,
+  total: computed
 });
 
 const donationStore = new DonationStore();
+donationStore.fetchAllDonations();
 
 export default donationStore;

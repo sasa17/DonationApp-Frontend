@@ -1,22 +1,10 @@
 import React, { Component } from "react";
 
 // NativeBase Components
-import {
-  Content,
-  List,
-  Text,
-  Left,
-  Right,
-  Body,
-  Container,
-  Card,
-  CardItem,
-  Button,
-} from "native-base";
+import {Content, Text, Container, Button} from "native-base";
 import { Alert } from "react-native";
 
 import donationStore from "../../stores/donationStore";
-import profileStore from "../../stores/profileStore";
 import CheckoutItem from "./CheckoutItem";
 import styles from "./styles";
 import { observer } from "mobx-react";
@@ -27,7 +15,7 @@ class Checkout extends Component {
     const checkoutAmount = donationStore.donations.map((checkout_donation) => (
       <CheckoutItem
         donation={checkout_donation}
-        key={checkout_donation.id}
+        key={donation.id}
       />
     ));
     const handleCheckout = () => {

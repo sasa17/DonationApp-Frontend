@@ -16,7 +16,7 @@ class Donation extends Component {
 
   handlePress = () => {
     if (authStore.user)
-      return donationStore.addDonation(this.state, this.props.navigation), this.setState({ amount: "" });
+      return donationStore.addDonation(this.state, this.props.navigation);
     else
       Alert.alert("User not found", "Please Login or Register to continue", [
         {

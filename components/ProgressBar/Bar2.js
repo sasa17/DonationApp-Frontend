@@ -1,8 +1,7 @@
 import React, {useRef, useState, useEffect} from 'react';
 import { Text, View, StyleSheet, Animated } from 'react-native';
+import Constants from 'expo-constants';
 import restaurantStore from "../../stores/restaurantStore";
-import donationStore from "../../stores/donationStore";
-import { observer } from "mobx-react";
 
 // setInterval custom hook by Dan Abramov
 function useInterval(callback, delay) {
@@ -24,16 +23,15 @@ function useInterval(callback, delay) {
     }
   }, [delay]);
 }
-const total_donations = donationStore.checkout_donations.forEach((donation)=>(total += donation.amount))
-console.log("total", donationStore.checkout_donations)
 
-const Bar2 = () => {
-  let animation = useRef(new Animated.Value());
-  const [progress, setProgress] = useState();
+
+const App = () => {
+  let animation = useRef(new Animated.Value(0));
+  const [progress, setProgress] = useState(0);
   useInterval(() => {
     // update progress until 100
     if(progress < restaurantStore.total) {
-      setProgress(progress + donationStore.checkout_donations);
+      setProgress(progress + 5);
     }
   }, 1000);
 
@@ -52,29 +50,28 @@ const Bar2 = () => {
 
   return (
     <View>
-      <Text style={{ color: "darkgreen", fontWeight: "bold", alignSelf: "center", fontSize: 18, marginTop:10, marginBottom:10 }}>
-        Donation Progress
+      <Text>
+        Loading…..
       </Text>
       <View style={styles.progressBar}>
-        <Animated.View style={[StyleSheet.absoluteFill, { backgroundColor: "darkgreen", width }]}/> 
-        <Text style={{ color: "darkgreen", fontWeight: "bold" }}>
-          KD {progress}</Text>
+        <Animated.View style={[StyleSheet.absoluteFill, { backgroundColor: "#8BED4F", width }]}/>
       </View>
-        <Text style={{ color: "darkgreen", fontWeight: "bold", alignSelf: "flex-end" }}>
-          KD {restaurantStore.total}</Text>
+      <Text>
+        {`${progress}%`}
+      </Text>
 
     </View>
   );
 }
 
-export default observer(Bar2);
+export default App;
 
 const styles = StyleSheet.create({
   progressBar: {
     flexDirection: 'row',
     height: 20,
     width: '100%',
-    backgroundColor: 'snow',
+    backgroundColor: 'white',
     borderColor: '#000',
     borderWidth: 2,
     borderRadius: 5
