@@ -5,14 +5,14 @@ import restaurantStore from "../../stores/restaurantStore";
 import donationStore from "../../stores/donationStore";
 import { observer } from "mobx-react";
 
-// // // setInterval custom hook by Dan Abramov
-// // function useInterval(callback, delay) {
-// //   const savedCallback = useRef();
+// setInterval custom hook by Dan Abramov
+function useInterval(callback, delay) {
+  const savedCallback = useRef();
 
-// //   // Remember the latest callback.
-// //   useEffect(() => {
-// //     savedCallback.current = callback;
-// //   }, [callback]);
+  // Remember the latest callback.
+  useEffect(() => {
+    savedCallback.current = callback;
+  }, [callback]);
 
   // Set up the interval.
   useEffect(() => {
@@ -24,7 +24,7 @@ import { observer } from "mobx-react";
       return () => clearInterval(id);
     }
   }, [delay]);
-
+}
 
 const Bar2 = () => {
   let animation = useRef(new Animated.Value(0));
@@ -36,7 +36,12 @@ const Bar2 = () => {
     }
   }, 1000);
 
-//   animation = new Animated.Value(0)
+  useEffect(() => {
+    Animated.timing(animation.current, {
+      toValue: progress,
+      duration: 100,
+    }).start();
+  }, [progress]);
 
   const width = animation.current.interpolate({
     inputRange: [0, restaurantStore.total],
