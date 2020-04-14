@@ -1,10 +1,10 @@
 {
   "devToolsPort": 19002,
-  "expoServerPort": 19000,
-  "packagerPort": 19001,
-  "packagerPid": 47691,
-  "expoServerNgrokUrl": "https://zq-476.anonymous.donationapp-frontend.exp.direct",
-  "packagerNgrokUrl": "https://packager.zq-476.anonymous.donationapp-frontend.exp.direct",
-  "ngrokPid": 47701,
+  "expoServerPort": null,
+  "packagerPort": null,
+  "packagerPid": null,
+  "expoServerNgrokUrl": null,
+  "packagerNgrokUrl": null,
+  "ngrokPid": null,
   "webpackServerPort": null
 }
