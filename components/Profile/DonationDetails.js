@@ -2,6 +2,7 @@ import React, { Component } from "react";
 
 // NativeBase Components
 import { Text, Header, Container, Content } from "native-base";
+import {Image} from "react-native";
 import profileStore from "../../stores/profileStore";
 import styles from "./styles";
 
@@ -17,12 +18,14 @@ class DonationDetails extends Component {
 
     return (
       <Container style={styles.authContainer}>
+        <Content>
         <Header transparent>
         <Image
               style={{ width: 150, height: 150 }}
               source={require("../../assets/FeedForward.png")}
             ></Image>
         </Header>
+        </Content>
         <Content>
         <Text style={styles.profiletextTitle}>Donation Date: </Text><Text style={styles.profiletext}>{donation.date}</Text>
           <Text style={styles.profiletextTitle}>

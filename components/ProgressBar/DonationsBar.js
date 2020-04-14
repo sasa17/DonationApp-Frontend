@@ -2,11 +2,11 @@ import React, { Component } from "react";
 import { StyleSheet, Text, View, Animated } from "react-native";
 import { observer } from "mobx-react";
 import donationStore from "../../stores/donationStore";
+import restaurantStore from "../../stores/restaurantStore";
 
 class DonationsBar extends Component {
-  componentDidMount() {
-    this.animation = new Animated.Value(this.props.progress);
-  }
+
+  animation = new Animated.Value(this.props.progress)
 
   componentDidUpdate(prevProps) {
     if (prevProps.progress != this.props.progress) {
@@ -18,7 +18,7 @@ class DonationsBar extends Component {
   }
   render() {
     const widthInterpolated = this.animation.interpolate({
-      inputRange: [0, 1],
+      inputRange: [0, restaurantStore.total],
       outputRange: ["0%", "100%"],
       extrapolate: "clamp",
     });
@@ -32,7 +32,7 @@ class DonationsBar extends Component {
             borderWidth: 1,
             borderRadius: 10,
             marginLeft: 5,
-            marginRight: 5,
+            marginRight: 5
           }}
         >
           {/* Not filled */}
@@ -52,7 +52,8 @@ class DonationsBar extends Component {
               borderRadius: 10,
             }}
           />
-          <Text
+        </View>
+        <Text
             style={{
               textAlign: "center",
               alignItems: "center",
@@ -61,7 +62,6 @@ class DonationsBar extends Component {
           >
             {this.props.progress}
           </Text>
-        </View>
       </View>
     );
   }

@@ -7,7 +7,7 @@ import { observer } from "mobx-react";
 
 class Bar extends Component {
   state = {
-    progress: 10,
+    progress: donationStore.total,
   };
 
   componentDidMount() {
@@ -17,6 +17,7 @@ class Bar extends Component {
       }));
     }, restaurantStore.total);
   }
+
   render() {
     return (
       <View alignItems="center">

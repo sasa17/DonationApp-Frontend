@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, useState } from "react";
 import { observer } from "mobx-react";
 
 // NativeBase Components
@@ -16,6 +16,7 @@ import DonationItem from "../Donations/Index";
 import Bar from "../ProgressBar/index";
 import Bar2 from "../ProgressBar/Bar2";
 import Bar3 from "../ProgressBar/Bar3";
+import donationStore from "../../stores/donationStore";
 
 class RestaurantList extends Component {
   render() {
@@ -27,7 +28,7 @@ class RestaurantList extends Component {
       <Container style={styles.authContainer}>
         <DonationItem />
         <Card>
-          <Bar3 />
+          <Bar />
         </Card>
         <Text style={styles.headerText}>Participating Restaurants</Text>
         <Content>

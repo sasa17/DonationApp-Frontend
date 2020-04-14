@@ -26,6 +26,13 @@ class DonationStore {
     }
   };
 
+  get total() {
+    let total = 0.0;
+    this.all_donations.forEach((item) => (total += Number(item.amount)));
+    console.log("donationsss", total);
+    return total;
+  };
+
   checkoutDonation = async (navigation) => {
     this.donations = [];
     this.checkout_donations = [];
@@ -39,19 +46,12 @@ class DonationStore {
       console.log("something went wrong while checkout");
     }
   };
-
-  get total() {
-    let total = 0.0;
-    this.all_donations.forEach((item) => (total += Number(item.amount)));
-    console.log("donationsss", total);
-    return total;
-  }
 }
 decorate(DonationStore, {
   all_donations: observable,
   donations: observable,
   checkout_donations: observable,
-  // total: computed,
+  total: computed,
 });
 
 const donationStore = new DonationStore();
