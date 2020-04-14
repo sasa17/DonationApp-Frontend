@@ -58,4 +58,5 @@ decorate(DonationStore, {
 });
 
 const donationStore = new DonationStore();
+donationStore.fetchAllDonations();
 export default donationStore;

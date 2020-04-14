@@ -4,9 +4,7 @@ import { observer } from "mobx-react";
 import donationStore from "../../stores/donationStore";
 
 class DonationsBar extends Component {
-
   componentDidMount() {
-    donationStore.fetchAllDonations(),
     this.animation = new Animated.Value(this.props.progress);
   }
 
@@ -34,7 +32,7 @@ class DonationsBar extends Component {
             borderWidth: 1,
             borderRadius: 10,
             marginLeft: 5,
-            marginRight: 5
+            marginRight: 5,
           }}
         >
           {/* Not filled */}
