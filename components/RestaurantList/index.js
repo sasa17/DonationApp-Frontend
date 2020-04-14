@@ -20,7 +20,8 @@ import donationStore from "../../stores/donationStore";
 
 class RestaurantList extends Component {
   render() {
-    if (restaurantStore.loading) return <Spinner />
+    if (restaurantStore.loading) return <Spinner />;
+    if (donationStore.loading) return <Spinner />;
     const RestaurantList = restaurantStore.restaurants.map((restaurant) => (
       <RestaurantItem restaurant={restaurant} key={restaurant.id} />
     ));
@@ -28,7 +29,7 @@ class RestaurantList extends Component {
       <Container style={styles.authContainer}>
         <DonationItem />
         <Card>
-          <Bar />
+          <Bar2 />
         </Card>
         <Text style={styles.headerText}>Participating Restaurants</Text>
         <Content>

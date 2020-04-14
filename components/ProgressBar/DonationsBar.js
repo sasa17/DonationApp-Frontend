@@ -57,7 +57,7 @@ class DonationsBar extends Component {
             style={{
               textAlign: "center",
               alignItems: "center",
-              color: "darkgreen",
+              color: "white",
             }}
           >
             {this.props.progress}
