@@ -5,14 +5,12 @@ class DonationStore {
   all_donations = [];
   donations = [];
   checkout_donations = [];
-  loading = true;
 
   fetchAllDonations = async () => {
     try {
       const res = await instance.get(`donation/list/`);
       const donation = res.data;
       this.all_donations = donation;
-      this.loading = false;
     } catch (err) {
       console.error(err);
     }
@@ -51,7 +49,6 @@ class DonationStore {
 }
 decorate(DonationStore, {
   all_donations: observable,
-  loading: observable,
   donations: observable,
   checkout_donations: observable,
   total: computed,

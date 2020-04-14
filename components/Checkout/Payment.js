@@ -1,7 +1,7 @@
 
 // const Payment = () =>{
-// let secret = 'XXXXX' // Secret provided by Hesabe
-//       let ivCode = 'XXXXX' // IV provided by Hesabe
+// let secret = 'PkW64zMe5NVdrlPVNnjo2Jy9nOb7v1Xg' // Secret provided by Hesabe
+//       let ivCode = '5NVdrlPVNnjo2Jy9' // IV provided by Hesabe
 
 // key = aesjs.utils.utf8.toBytes(secret);
 // iv = aesjs.utils.utf8.toBytes(ivKey);

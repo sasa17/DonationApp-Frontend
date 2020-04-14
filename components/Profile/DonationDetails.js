@@ -18,11 +18,15 @@ class DonationDetails extends Component {
     return (
       <Container style={styles.authContainer}>
         <Header transparent>
-          <Text style={styles.authTitle}>Donation Date: {donation.date}</Text>
+        <Image
+              style={{ width: 150, height: 150 }}
+              source={require("../../assets/FeedForward.png")}
+            ></Image>
         </Header>
         <Content>
-          <Text style={styles.profiletext}>
-            Donation Amount: KD {donation.amount}
+        <Text style={styles.profiletextTitle}>Donation Date: </Text><Text style={styles.profiletext}>{donation.date}</Text>
+          <Text style={styles.profiletextTitle}>
+            Donation Amount: </Text><Text style={styles.profiletext}>KD {donation.amount}
           </Text>
         </Content>
       </Container>

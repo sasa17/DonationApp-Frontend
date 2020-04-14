@@ -11,7 +11,7 @@ import { withNavigation } from "react-navigation";
 
 class Donation extends Component {
   state = {
-    amount: "",
+    amount: null,
   };
 
   handlePress = () => {

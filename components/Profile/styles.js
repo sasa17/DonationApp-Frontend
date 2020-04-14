@@ -42,6 +42,12 @@ const styles = StyleSheet.create({
     marginBottom: 20,
     borderBottomColor: "darkgreen",
   },
+  profiletextTitle: {
+    textAlign: "left",
+    color: "darkgreen",
+    fontSize: 18,
+    fontWeight: "bold"
+  },
   profiletext: {
     textAlign: "left",
     color: "darkgreen",

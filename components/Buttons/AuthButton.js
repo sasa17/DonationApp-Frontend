@@ -20,13 +20,12 @@ const LoginButton = ({ navigation }) => {
       /> */}
     </Button>
   ) : (
-    <Button transparent>
+    <Button transparent  onPress={handleLogin}>
       <Text style={{color:"darkgreen", alignSelf: "center"}}>Login</Text>
       <Icon
         name="login"
         type="AntDesign"
         style={{ color: "darkgreen" }}
-        onPress={handleLogin}
       />
     </Button>
   );

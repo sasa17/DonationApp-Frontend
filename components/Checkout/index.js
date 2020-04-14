@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 // NativeBase Components
-import { Content, Text, Container, Button, Spinner } from "native-base";
+import { Content, Text, Container, Button, Spinner, Header, Image } from "native-base";
 import { Alert } from "react-native";
 
 import donationStore from "../../stores/donationStore";
@@ -11,7 +11,6 @@ import { observer } from "mobx-react";
 
 class Checkout extends Component {
   render() {
-    if (donationStore.loading) return <Spinner />;
     const checkoutAmount = donationStore.donations.map((checkout_donation) => (
       <CheckoutItem donation={checkout_donation} key={checkout_donation.id} />
     ));
@@ -21,6 +20,9 @@ class Checkout extends Component {
     };
     return (
       <Container style={styles.authContainer}>
+        <Header transparent>
+        {/* <Image style={{ width: 150, height: 150 }} source={require("../../assets/FeedForward.png")}></Image> */}
+        </Header>
         <Content>
           {checkoutAmount}
           <Button style={styles.authButton} onPress={handleCheckout}>

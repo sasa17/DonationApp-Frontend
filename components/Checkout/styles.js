@@ -15,6 +15,7 @@ const styles = StyleSheet.create({
     color: "snow",
     fontWeight: "bold",
     fontSize: 18,
+    alignSelf: "center"
   },
   card: {
     backgroundColor: "snow",
