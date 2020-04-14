@@ -3,6 +3,7 @@ import { Text, View, StyleSheet, Animated } from "react-native";
 import Constants from "expo-constants";
 import restaurantStore from "../../stores/restaurantStore";
 import donationStore from "../../stores/donationStore";
+import { observer } from "mobx-react";
 
 // setInterval custom hook by Dan Abramov
 function useInterval(callback, delay) {
@@ -24,7 +25,6 @@ function useInterval(callback, delay) {
     }
   }, [delay]);
 }
-console.log("don", donationStore.total)
 
 const Bar2 = () => {
   let animation = useRef(new Animated.Value(0));
@@ -32,7 +32,7 @@ const Bar2 = () => {
   useInterval(() => {
     // update progress until 100
     if (progress < restaurantStore.total) {
-      setProgress(progress);
+      setProgress(donationStore.total);
     }
   }, 1000);
 
@@ -45,33 +45,64 @@ const Bar2 = () => {
 
   const width = animation.current.interpolate({
     inputRange: [0, restaurantStore.total],
-    outputRange: ["0%", `${restaurantStore.total}%`],
+    outputRange: ["0%", `100%`],
     extrapolate: "clamp",
   });
 
   return (
-    <View>
-      <Text>Donation Progress</Text>
+    <View style={{ alignItems: "center" }}>
+      <Text
+        style={{
+          fontSize: 18,
+          marginBottom: 15,
+          marginTop: 15,
+          color: "darkgreen",
+          fontWeight: "bold",
+        }}
+      >
+        Donation progress:
+      </Text>
       <View style={styles.progressBar}>
         <Animated.View
           style={[
             StyleSheet.absoluteFill,
-            { backgroundColor: "#8BED4F", width },
+            {
+              backgroundColor: "#8BED4F",
+              width,
+              position: "absolute",
+              left: 0,
+              top: 0,
+              bottom: 0,
+              backgroundColor: "darkgreen",
+              borderRadius: 10,
+            },
           ]}
         />
+        <Text
+          style={{
+            textAlign: "center",
+            alignItems: "center",
+            color: "white",
+          }}
+        >
+          {`${progress}`}
+        </Text>
       </View>
-      <Text>{`${progress}`}</Text>
+      <Text style={{ color: "darkgreen", fontWeight: "bold" }}>
+        KD {restaurantStore.total}
+      </Text>
     </View>
   );
 };
 
-export default Bar2;
+export default observer(Bar2);
 
 const styles = StyleSheet.create({
   progressBar: {
+    alignItems: "center",
     flexDirection: "row",
     height: 20,
-    width: "100%",
+    width: "90%",
     backgroundColor: "white",
     borderColor: "#000",
     borderWidth: 2,

@@ -16,10 +16,12 @@ import DonationItem from "../Donations/Index";
 import Bar from "../ProgressBar/index";
 import Bar2 from "../ProgressBar/Bar2";
 import Bar3 from "../ProgressBar/Bar3";
+import donationStore from "../../stores/donationStore";
 
 class RestaurantList extends Component {
   render() {
-    if (restaurantStore.loading) return <Spinner />
+    if (restaurantStore.loading) return <Spinner />;
+    if (donationStore.loading) return <Spinner />;
     const RestaurantList = restaurantStore.restaurants.map((restaurant) => (
       <RestaurantItem restaurant={restaurant} key={restaurant.id} />
     ));
@@ -27,7 +29,7 @@ class RestaurantList extends Component {
       <Container style={styles.authContainer}>
         <DonationItem />
         <Card>
-          <Bar3 />
+          <Bar2 />
         </Card>
         <Text style={styles.headerText}>Participating Restaurants</Text>
         <Content>
