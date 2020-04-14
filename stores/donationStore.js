@@ -36,7 +36,7 @@ class DonationStore {
     try {
       const res = await instance.get("checkout/");
       const checkout_donation = res.data.amount;
-      this.checkout_donations = checkout_donation;
+      this.checkout_donations.push(checkout_donation);
       this.loading = false;
       navigation.navigate("List");
     } catch (err) {
@@ -47,7 +47,7 @@ class DonationStore {
   get total() {
     let total = 0.0;
     this.all_donations.forEach((item) => (total += Number(item.amount)));
-    total += Number(this.checkout_donations);
+    this.checkout_donations.forEach((item) => (total += Number(item)));
     console.log("donationsss", total);
     return total;
   }
