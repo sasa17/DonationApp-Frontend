@@ -13,9 +13,7 @@ import ProfileButton from "../Buttons/ProfileButton";
 import LoginButton from "../Buttons/AuthButton";
 import styles from "./styles";
 import DonationItem from "../Donations/Index";
-import Bar from "../ProgressBar/index";
-import Bar2 from "../ProgressBar/Bar2";
-import Bar3 from "../ProgressBar/Bar3";
+import DonationsBar from "../DonationsBar";
 import donationStore from "../../stores/donationStore";
 
 class RestaurantList extends Component {
@@ -29,7 +27,7 @@ class RestaurantList extends Component {
       <Container style={styles.authContainer}>
         <DonationItem />
         <Card>
-          <Bar2 />
+          <DonationsBar />
         </Card>
         <Text style={styles.headerText}>Participating Restaurants</Text>
         <Content>

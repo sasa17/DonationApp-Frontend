@@ -1,18 +1,19 @@
 import React, { Component } from "react";
 
 // NativeBase Components
-import { Content, Text, Container, Button, Spinner, Header } from "native-base";
+import { Content, Text, Container, Button, Header } from "native-base";
 import { Alert, Image } from "react-native";
 
 import donationStore from "../../stores/donationStore";
 import CheckoutItem from "./CheckoutItem";
 import styles from "./styles";
 import { observer } from "mobx-react";
-import ProgressBar from "../ProgressBar";
+import restaurantStore from "../../stores/restaurantStore";
+import { withNavigation } from "react-navigation";
+
 
 class Checkout extends Component {
   render() {
-    const id = donationStore.donations.id;
     const checkoutAmount = donationStore.donations.map((checkout_donation) => (
       <CheckoutItem
         donation={checkout_donation}
@@ -20,6 +21,9 @@ class Checkout extends Component {
       />
     ));
     const handleCheckout = () => {
+      if (donationStore.checkoutDonation = Error)
+      return (Alert.alert("Donations required achieved!", "Try again tomorrow", [{text: "Thank you for feeding forward!", onPress: () => this.props.navigation.navigate("List"),}]))
+      else
       Alert.alert("Thank you for feeding forward!"),
         donationStore.checkoutDonation(this.props.navigation);
     };
@@ -48,4 +52,4 @@ Checkout.navigationOptions = {
   title: "Checkout",
 };
 
-export default observer(Checkout);
+export default withNavigation(observer(Checkout));

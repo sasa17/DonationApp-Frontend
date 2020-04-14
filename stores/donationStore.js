@@ -1,5 +1,7 @@
 import { decorate, observable, computed } from "mobx";
 import { instance } from "./instance";
+import restaurantStore from "./restaurantStore";
+import { Alert } from "react-native";
 
 class DonationStore {
   all_donations = [];
@@ -29,6 +31,8 @@ class DonationStore {
   checkoutDonation = async (navigation) => {
     this.donations = [];
     this.checkout_donations = [];
+    if ((this.total += this.donations) < restaurantStore.total)
+    return 
     try {
       const res = await instance.get("checkout/");
       const checkout_donation = res.data.amount;

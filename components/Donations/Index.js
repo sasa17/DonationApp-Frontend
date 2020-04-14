@@ -8,6 +8,7 @@ import { Text, Card, CardItem, Left, Right, Button, Body } from "native-base";
 import styles from "./styles";
 import authStore from "../../stores/authStore";
 import { withNavigation } from "react-navigation";
+import restaurantStore from "../../stores/restaurantStore";
 
 class Donation extends Component {
   state = {
@@ -16,7 +17,7 @@ class Donation extends Component {
 
   handlePress = () => {
     if (authStore.user)
-      return donationStore.addDonation(this.state, this.props.navigation);
+      return donationStore.addDonation(this.state, this.props.navigation)
     else
       Alert.alert("User not found", "Please Login or Register to continue", [
         {
@@ -29,6 +30,10 @@ class Donation extends Component {
         },
       ]);
   };
+  // componentDidUpdate(){
+  //   if (donationStore.checkoutDonation != Error)
+  //   this.state.amount= ""
+  // }
 
   render() {
     return (
