@@ -15,6 +15,7 @@ import styles from "./styles";
 import DonationItem from "../Donations/Index";
 import Bar from "../ProgressBar/index";
 import Bar2 from "../ProgressBar/Bar2";
+import Bar3 from "../ProgressBar/Bar3";
 
 class RestaurantList extends Component {
   render() {
@@ -26,7 +27,7 @@ class RestaurantList extends Component {
       <Container style={styles.authContainer}>
         <DonationItem />
         <Card>
-          <Bar2 />
+          <Bar3 />
         </Card>
         <Text style={styles.headerText}>Participating Restaurants</Text>
         <Content>

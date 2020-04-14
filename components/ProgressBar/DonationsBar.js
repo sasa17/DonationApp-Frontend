@@ -18,7 +18,7 @@ class DonationsBar extends Component {
   }
   render() {
     const widthInterpolated = this.animation.interpolate({
-      inputRange: [0, restaurantStore.total],
+      inputRange: [0, 1],
       outputRange: ["0%", "100%"],
       extrapolate: "clamp",
     });

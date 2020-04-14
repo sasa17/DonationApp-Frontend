@@ -7,18 +7,17 @@ import { observer } from "mobx-react";
 
 class Bar extends Component {
   state = {
-    progress: 0,
+    progress: 10,
   };
 
   componentDidMount() {
     setInterval(() => {
       this.setState((state) => ({
-        progress: state.progress + donationStore.checkout_donations,
+        progress: state.progress,
       }));
     }, restaurantStore.total);
   }
   render() {
-    if (donationStore.loading) return <Spinner />;
     return (
       <View alignItems="center">
         <Text

@@ -25,6 +25,7 @@ function useInterval(callback, delay) {
   }, [delay]);
 }
 console.log("don", donationStore.total)
+
 const Bar2 = () => {
   let animation = useRef(new Animated.Value(0));
   const [progress, setProgress] = useState(donationStore.total);
@@ -50,7 +51,7 @@ const Bar2 = () => {
 
   return (
     <View>
-      <Text>Loading…..</Text>
+      <Text>Donation Progress</Text>
       <View style={styles.progressBar}>
         <Animated.View
           style={[

@@ -43,7 +43,7 @@ class DonationStore {
   get total() {
     let total = 0.0;
     this.all_donations.forEach((item) => (total += Number(item.amount)));
-    console.log("donationsss", this.all_donations);
+    console.log("donationsss", total);
     return total;
   }
 }
@@ -51,7 +51,7 @@ decorate(DonationStore, {
   all_donations: observable,
   donations: observable,
   checkout_donations: observable,
-  total: computed,
+  // total: computed,
 });
 
 const donationStore = new DonationStore();

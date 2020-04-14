@@ -3,7 +3,7 @@ import { AsyncStorage } from "react-native";
 import jwt_decode from "jwt-decode";
 import { instance } from "./instance";
 import { Alert } from "react-native";
-import donationStore from "./donationStore";
+
 
 class AuthStore {
   user = null;
