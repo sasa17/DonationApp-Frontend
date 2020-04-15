@@ -1,9 +1,12 @@
 import React, { Component } from "react";
 
-// NativeBase Components
+// Style Components
 import { Text, Header, Container, Content } from "native-base";
-import profileStore from "../../stores/profileStore";
+import { Image } from "react-native";
 import styles from "./styles";
+
+// Stores
+import profileStore from "../../stores/profileStore";
 
 class DonationDetails extends Component {
   state = {
@@ -17,12 +20,23 @@ class DonationDetails extends Component {
 
     return (
       <Container style={styles.authContainer}>
-        <Header transparent>
-          <Text style={styles.authTitle}>Donation Date: {donation.date}</Text>
-        </Header>
         <Content>
+          <Header transparent>
+            <Image
+              style={{ width: 150, height: 150 }}
+              source={require("../../assets/FeedForward.png")}
+            ></Image>
+          </Header>
+        </Content>
+        <Content>
+          <Text style={styles.profiletextTitle}>Donation Date: </Text>
+          <Text style={styles.profiletext}>{donation.date}</Text>
+          <Text style={styles.profiletextTitle}>Donation Amount: </Text>
           <Text style={styles.profiletext}>
-            Donation Amount: KD {donation.amount}
+            {new Intl.NumberFormat("en-IN", {
+              style: "currency",
+              currency: "KWD",
+            }).format(donation.amount)}
           </Text>
         </Content>
       </Container>

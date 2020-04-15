@@ -1,33 +1,24 @@
 import React, { Component } from "react";
-
-// NativeBase Components
-import {
-  Content,
-  List,
-  Text,
-  Left,
-  Right,
-  Body,
-  Container,
-  Card,
-  CardItem,
-  Button,
-} from "native-base";
-import { Alert } from "react-native";
-
-import donationStore from "../../stores/donationStore";
-import profileStore from "../../stores/profileStore";
-import CheckoutItem from "./CheckoutItem";
-import styles from "./styles";
 import { observer } from "mobx-react";
+import { withNavigation } from "react-navigation";
+
+// Style Components
+import { Content, Text, Container, Button, Header } from "native-base";
+import { Alert, Image } from "react-native";
+import styles from "./styles";
+
+// Stores
+import donationStore from "../../stores/donationStore";
+
+// Components
+import CheckoutItem from "./CheckoutItem";
 
 class Checkout extends Component {
   render() {
-    if (donationStore.loading) return <Spinner />;
     const checkoutAmount = donationStore.donations.map((checkout_donation) => (
       <CheckoutItem
         donation={checkout_donation}
-        key={checkout_donation.id}
+        key={`${checkout_donation.amount} ${checkout_donation.user} ${checkout_donation.id}`}
       />
     ));
     const handleCheckout = () => {
@@ -36,6 +27,14 @@ class Checkout extends Component {
     };
     return (
       <Container style={styles.authContainer}>
+        <Content>
+          <Header transparent>
+            <Image
+              source={require("../../assets/FeedForward.png")}
+              style={{ width: 150, height: 150 }}
+            ></Image>
+          </Header>
+        </Content>
         <Content>
           {checkoutAmount}
           <Button style={styles.authButton} onPress={handleCheckout}>
@@ -51,4 +50,4 @@ Checkout.navigationOptions = {
   title: "Checkout",
 };
 
-export default observer(Checkout);
+export default withNavigation(observer(Checkout));

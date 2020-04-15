@@ -1,6 +1,6 @@
 import React from "react";
 
-// NativeBase Components
+// Style Components
 import { Card, CardItem, Text } from "native-base";
 import styles from "./styles";
 
@@ -9,7 +9,11 @@ const CheckoutItem = ({ donation }) => {
     <Card style={styles.card}>
       <CardItem style={styles.card}>
         <Text style={styles.newText}>
-          Total Amount : KD {donation.amount}.000
+          Total Amount :{" "}
+          {new Intl.NumberFormat("en-IN", {
+            style: "currency",
+            currency: "KWD",
+          }).format(donation.amount)}
         </Text>
       </CardItem>
     </Card>

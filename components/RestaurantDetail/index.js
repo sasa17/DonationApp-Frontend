@@ -1,20 +1,19 @@
 import React, { Component } from "react";
 import { observer } from "mobx-react";
 
-// NativeBase Components
+// Style Components
 import { Content, Spinner, Text, Card, CardItem } from "native-base";
+import styles from "./styles";
 
 // Stores
 import menuStore from "../../stores/menuStore";
 
-// Component
+// Components
 import MenuItem from "./MenuItem";
-import ProfileButton from "../Buttons/ProfileButton";
 import AuthButton from "../Buttons/AuthButton";
-import styles from "./styles";
 
 class RestaurantDetail extends Component {
-  componentDidMount() {
+  componentDidMount(restaurantID) {
     restaurantID = this.props.navigation.getParam("restaurantID", 1);
     menuStore.fetchAllMenuItems(restaurantID);
   }
@@ -28,9 +27,15 @@ class RestaurantDetail extends Component {
       <Content>
         {menuList}
         <Card style={styles.card}>
-      <CardItem style={styles.total_card} >
-        <Text style={styles.newText}>Total: KD {menuStore.total}</Text>
-        </CardItem>
+          <CardItem style={styles.total_card}>
+            <Text style={styles.newText}>
+              Total:{" "}
+              {new Intl.NumberFormat("en-IN", {
+                style: "currency",
+                currency: "KWD",
+              }).format(menuStore.total)}
+            </Text>
+          </CardItem>
         </Card>
       </Content>
     );

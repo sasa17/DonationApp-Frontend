@@ -1,8 +1,8 @@
 import React from "react";
-
-// NativeBase Components
-import { Card, CardItem, Text } from "native-base";
 import { withNavigation } from "react-navigation";
+
+// Style Components
+import { Card, CardItem, Text } from "native-base";
 import styles from "./styles";
 
 const DonationCard = ({ past_donation, navigation }) => {
@@ -11,7 +11,7 @@ const DonationCard = ({ past_donation, navigation }) => {
   return (
     <Card>
       <CardItem header button onPress={handleDetail}>
-        <Text style={styles.profiletext}>Date: {past_donation.date}</Text>
+        <Text style={styles.dateList}>Date: {past_donation.date}</Text>
       </CardItem>
     </Card>
   );
