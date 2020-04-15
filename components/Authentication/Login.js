@@ -1,16 +1,14 @@
 import React, { Component } from "react";
 import { observer } from "mobx-react";
+import { withNavigation } from "react-navigation";
+
+// Style Components
 import styles from "./styles";
-
-// NativeBase Components
-import { TextInput, TouchableOpacity, View, Image } from "react-native";
-import { Spinner } from "native-base";
-
-import { Text } from "native-base";
+import { TextInput, TouchableOpacity, View, Alert } from "react-native";
+import { Spinner, Text } from "native-base";
 
 // Store
 import authStore from "../../stores/authStore";
-import donationStore from "../../stores/donationStore";
 
 class Login extends Component {
   state = {
@@ -18,8 +16,19 @@ class Login extends Component {
     password: "",
   };
 
-  handlePress = () => {
-    authStore.login(this.state, this.props.navigation);
+  handlePress = async () => {
+    await authStore.login(this.state, this.props.navigation);
+    if (!authStore.user)
+      Alert.alert("User not found", "Incorrect Username/Password.", [
+        {
+          text: "Try Again!",
+          onPress: () => this.props.navigation.navigate("Login"),
+        },
+        {
+          text: "Register",
+          onPress: () => this.props.navigation.navigate("Register"),
+        },
+      ]);
   };
 
   componentDidMount() {
@@ -57,4 +66,4 @@ class Login extends Component {
     );
   }
 }
-export default observer(Login);
+export default withNavigation(observer(Login));

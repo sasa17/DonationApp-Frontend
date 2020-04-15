@@ -1,20 +1,22 @@
-import React, { Component, useState } from "react";
+import React, { Component } from "react";
 import { observer } from "mobx-react";
 
-// NativeBase Components
+// Style Components
 import { List, Content, Spinner, Container, Card, Text } from "native-base";
+import styles from "./styles";
 
 // Stores
 import restaurantStore from "../../stores/restaurantStore";
+import donationStore from "../../stores/donationStore";
 
 // Component
 import RestaurantItem from "./RestaurantItem";
-import ProfileButton from "../Buttons/ProfileButton";
-import LoginButton from "../Buttons/AuthButton";
-import styles from "./styles";
 import DonationItem from "../Donations/Index";
 import DonationsBar from "../DonationsBar";
-import donationStore from "../../stores/donationStore";
+
+// Buttons
+import ProfileButton from "../Buttons/ProfileButton";
+import LoginButton from "../Buttons/AuthButton";
 
 class RestaurantList extends Component {
   render() {

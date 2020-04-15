@@ -46,10 +46,16 @@ const styles = StyleSheet.create({
     textAlign: "left",
     color: "darkgreen",
     fontSize: 18,
-    fontWeight: "bold"
+    fontWeight: "bold",
   },
   profiletext: {
-    textAlign: "left",
+    textAlign: "center",
+    color: "darkgreen",
+    fontSize: 18,
+    marginBottom: 30,
+  },
+  dateList: {
+    textAlign: "center",
     color: "darkgreen",
     fontSize: 18,
   },

@@ -1,9 +1,12 @@
 import React, { useRef, useState, useEffect } from "react";
+import { observer } from "mobx-react";
+
+// Style Components
 import { Text, View, StyleSheet, Animated } from "react-native";
-import Constants from "expo-constants";
+
+// Stores
 import restaurantStore from "../../stores/restaurantStore";
 import donationStore from "../../stores/donationStore";
-import { observer } from "mobx-react";
 
 // setInterval custom hook by Dan Abramov
 function useInterval(callback, delay) {
@@ -63,14 +66,17 @@ const DonationsBar = () => {
         Donation progress:
       </Text>
       <Text
-          style={{
-            alignSelf: "center",
-            color: "darkgreen",
-            fontWeight: "bold"
-          }}
-        >
-          KD {`${progress}`}
-        </Text>
+        style={{
+          alignSelf: "center",
+          color: "darkgreen",
+          fontWeight: "bold",
+        }}
+      >
+        {new Intl.NumberFormat("en-IN", {
+          style: "currency",
+          currency: "KWD",
+        }).format(progress)}
+      </Text>
       <View style={styles.progressBar}>
         <Animated.View
           style={[
@@ -89,14 +95,17 @@ const DonationsBar = () => {
         />
       </View>
       <Text
-          style={{
-            alignSelf: "flex-end",
-            color: "darkgreen",
-            fontWeight: "bold"
-          }}
-        >
-          KD {restaurantStore.total}
-        </Text>
+        style={{
+          alignSelf: "flex-end",
+          color: "darkgreen",
+          fontWeight: "bold",
+        }}
+      >
+        {new Intl.NumberFormat("en-IN", {
+          style: "currency",
+          currency: "KWD",
+        }).format(restaurantStore.total)}
+      </Text>
     </View>
   );
 };
@@ -114,6 +123,6 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderRadius: 10,
     marginLeft: 5,
-    marginRight: 5  
+    marginRight: 5,
   },
 });

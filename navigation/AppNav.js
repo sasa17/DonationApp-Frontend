@@ -23,6 +23,7 @@ const AppNav = createStackNavigator(
     initialRouteName: "List",
     defaultNavigationOptions: {
       title: "Feed Forward",
+      headerTintColor: "darkgreen",
     },
   }
 );

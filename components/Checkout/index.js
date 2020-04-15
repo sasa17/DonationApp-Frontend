@@ -1,16 +1,17 @@
 import React, { Component } from "react";
-
-// NativeBase Components
-import { Content, Text, Container, Button, Header } from "native-base";
-import { Alert, Image } from "react-native";
-
-import donationStore from "../../stores/donationStore";
-import CheckoutItem from "./CheckoutItem";
-import styles from "./styles";
 import { observer } from "mobx-react";
-import restaurantStore from "../../stores/restaurantStore";
 import { withNavigation } from "react-navigation";
 
+// Style Components
+import { Content, Text, Container, Button, Header } from "native-base";
+import { Alert, Image } from "react-native";
+import styles from "./styles";
+
+// Stores
+import donationStore from "../../stores/donationStore";
+
+// Components
+import CheckoutItem from "./CheckoutItem";
 
 class Checkout extends Component {
   render() {
@@ -21,9 +22,6 @@ class Checkout extends Component {
       />
     ));
     const handleCheckout = () => {
-      // if (donationStore.checkoutDonation = Error)
-      // return (Alert.alert("Donations required achieved!", "Try again tomorrow", [{text: "Thank you for feeding forward!", onPress: () => this.props.navigation.navigate("List"),}]))
-      // else
       Alert.alert("Thank you for feeding forward!"),
         donationStore.checkoutDonation(this.props.navigation);
     };

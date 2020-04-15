@@ -70,14 +70,23 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: "bold",
     marginLeft: 18,
-    alignContent: "center"
+    alignContent: "center",
   },
   card: {
     backgroundColor: "transparent",
   },
   total_card: {
     backgroundColor: "transparent",
-    alignSelf: "center"
+    alignSelf: "center",
+  },
+  noteTitle: {
+    color: "darkgreen",
+    fontSize: 12,
+    fontWeight: "bold",
+  },
+  note: {
+    color: "darkgreen",
+    fontSize: 14,
   },
 });
 export default styles;
