@@ -21,9 +21,9 @@ class Checkout extends Component {
       />
     ));
     const handleCheckout = () => {
-      if (donationStore.checkoutDonation = Error)
-      return (Alert.alert("Donations required achieved!", "Try again tomorrow", [{text: "Thank you for feeding forward!", onPress: () => this.props.navigation.navigate("List"),}]))
-      else
+      // if (donationStore.checkoutDonation = Error)
+      // return (Alert.alert("Donations required achieved!", "Try again tomorrow", [{text: "Thank you for feeding forward!", onPress: () => this.props.navigation.navigate("List"),}]))
+      // else
       Alert.alert("Thank you for feeding forward!"),
         donationStore.checkoutDonation(this.props.navigation);
     };

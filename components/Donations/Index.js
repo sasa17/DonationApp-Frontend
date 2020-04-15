@@ -15,10 +15,14 @@ class Donation extends Component {
     amount: null,
   };
 
-  handlePress = () => {
-    if (authStore.user)
-      return donationStore.addDonation(this.state, this.props.navigation)
-    else
+  handlePress = async () => {
+    if (
+      authStore.user &&
+      donationStore.total + this.state.amount < restaurantStore.total
+    ) {
+      await donationStore.addDonation(this.state, this.props.navigation);
+      this.setState({ amount: null });
+    } else
       Alert.alert("User not found", "Please Login or Register to continue", [
         {
           text: "Login!",
@@ -30,11 +34,6 @@ class Donation extends Component {
         },
       ]);
   };
-  // componentDidUpdate(){
-  //   if (donationStore.checkoutDonation != Error)
-  //   this.state.amount= ""
-  // }
-
   render() {
     return (
       <Card>
@@ -51,10 +50,11 @@ class Donation extends Component {
             />
           </Body>
           <Right>
-            <Button style ={{backgroundColor:"darkgreen"}} onPress={this.handlePress}>
-              <Text style={{ color: "snow", fontWeight: "bold" }}>
-                Donate
-              </Text>
+            <Button
+              style={{ backgroundColor: "darkgreen" }}
+              onPress={this.handlePress}
+            >
+              <Text style={{ color: "snow", fontWeight: "bold" }}>Donate</Text>
             </Button>
           </Right>
         </CardItem>

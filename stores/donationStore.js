@@ -7,6 +7,7 @@ class DonationStore {
   all_donations = [];
   donations = [];
   checkout_donations = [];
+  end_total=[];
 
   fetchAllDonations = async () => {
     try {
@@ -31,8 +32,6 @@ class DonationStore {
   checkoutDonation = async (navigation) => {
     this.donations = [];
     this.checkout_donations = [];
-    if ((this.total += this.donations) < restaurantStore.total)
-    return 
     try {
       const res = await instance.get("checkout/");
       const checkout_donation = res.data.amount;
@@ -48,6 +47,7 @@ class DonationStore {
     let total = 0.0;
     this.all_donations.forEach((item) => (total += Number(item.amount)));
     this.checkout_donations.forEach((item) => (total += Number(item)));
+    this.end_total=total
     console.log("donationsss", total);
     return total;
   }
@@ -56,6 +56,7 @@ decorate(DonationStore, {
   all_donations: observable,
   donations: observable,
   checkout_donations: observable,
+  end_total:observable,
   total: computed,
 });
 
