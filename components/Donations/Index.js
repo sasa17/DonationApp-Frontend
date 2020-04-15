@@ -58,6 +58,7 @@ class Donation extends Component {
               style={styles.authTextInput}
               placeholder="Donation amount"
               placeholderTextColor="#A6AEC1"
+              value={this.state.amount}
               onChangeText={(value) => this.setState({ amount: value })}
             />
           </Body>
