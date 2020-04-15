@@ -18,7 +18,7 @@ class Donation extends Component {
   handlePress = async () => {
     if (
       authStore.user &&
-      donationStore.total + this.state.amount < restaurantStore.total
+      donationStore.total + Number(this.state.amount) < restaurantStore.total
     ) {
       await donationStore.addDonation(this.state, this.props.navigation);
       this.setState({ amount: null });
