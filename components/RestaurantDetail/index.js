@@ -20,9 +20,10 @@ class RestaurantDetail extends Component {
 
   render() {
     if (menuStore.loading) return <Spinner />;
-    const menuList = menuStore.menu.map((menu) => (
-      <MenuItem menu={menu} key={menu.id} />
-    ));
+    const menuList = menuStore.menu.map(
+      (menu) =>
+        menu.available_qty != 0 && <MenuItem menu={menu} key={menu.id} />
+    );
     return (
       <Content>
         {menuList}
